@@ -5,6 +5,7 @@
     "author": "",
     "private": true,
     "license": "UNLICENSED",
+    "packageManager": "yarn@3.4.1",
     "scripts": {
         "build": "nest build",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
