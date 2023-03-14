@@ -1,0 +1,207 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model circuits {
+  circuitId  Int     @id @default(autoincrement())
+  circuitRef String  @unique @default("") @db.VarChar(255)
+  name       String  @default("") @db.VarChar(255)
+  location   String? @db.VarChar(255)
+  country    String? @db.VarChar(255)
+  lat        Float?  @db.Float
+  lng        Float?  @db.Float
+  alt        Int?
+  url        String  @unique(map: "url") @default("") @db.VarChar(255)
+
+  races races[]
+}
+
+model races {
+  raceId Int @id @default(autoincrement())
+  year   Int @default(0)
+  round  Int @default(0)
+
+  circuitId Int      @default(0)
+  circuit   circuits @relation(fields: [circuitId], references: [circuitId])
+
+  name        String    @default("") @db.VarChar(255)
+  date        DateTime  @default(dbgenerated("('0000-00-00')")) @db.Date
+  time        DateTime? @db.Time(0)
+  url         String?   @unique(map: "url") @db.VarChar(255)
+  fp1_date    DateTime? @db.Date
+  fp1_time    DateTime? @db.Time(0)
+  fp2_date    DateTime? @db.Date
+  fp2_time    DateTime? @db.Time(0)
+  fp3_date    DateTime? @db.Date
+  fp3_time    DateTime? @db.Time(0)
+  quali_date  DateTime? @db.Date
+  quali_time  DateTime? @db.Time(0)
+  sprint_date DateTime? @db.Date
+  sprint_time DateTime? @db.Time(0)
+
+  results            results[]
+  constructorResults constructorResults[]
+}
+
+model constructors {
+  constructorId  Int     @id @default(autoincrement())
+  constructorRef String  @default("") @db.VarChar(255)
+  name           String  @unique(map: "name") @default("") @db.VarChar(255)
+  nationality    String? @db.VarChar(255)
+  url            String  @default("") @db.VarChar(255)
+
+  results            results[]
+  constructorResults constructorResults[]
+}
+
+model results {
+  resultId Int @id @default(autoincrement())
+
+  raceId Int   @default(0)
+  race   races @relation(fields: [raceId], references: [raceId])
+
+  driverId Int     @default(0)
+  driver   drivers @relation(fields: [driverId], references: [driverId])
+
+  constructorId Int          @default(0)
+  constructorRelation   constructors @relation(fields: [constructorId], references: [constructorId])
+
+  number          Int?
+  grid            Int     @default(0)
+  position        Int?
+  positionText    String  @default("") @db.VarChar(255)
+  positionOrder   Int     @default(0)
+  points          Float   @default(0) @db.Float
+  laps            Int     @default(0)
+  time            String? @db.VarChar(255)
+  milliseconds    Int?
+  fastestLap      Int?
+  rank            Int?    @default(0)
+  fastestLapTime  String? @db.VarChar(255)
+  fastestLapSpeed String? @db.VarChar(255)
+
+  statusId Int    @default(0)
+  status   status @relation(fields: [statusId], references: [statusId])
+}
+
+model constructorResults {
+  constructorResultsId Int @id @default(autoincrement())
+
+  raceId Int   @default(0)
+  race   races @relation(fields: [raceId], references: [raceId])
+
+  constructorId Int          @default(0)
+  constructorRelation   constructors @relation(fields: [constructorId], references: [constructorId])
+
+  points Float?  @db.Float
+  status String? @db.VarChar(255)
+}
+
+model constructorStandings {
+  constructorStandingsId Int     @id @default(autoincrement())
+  raceId                 Int     @default(0)
+  constructorId          Int     @default(0)
+  points                 Float   @default(0) @db.Float
+  position               Int?
+  positionText           String? @db.VarChar(255)
+  wins                   Int     @default(0)
+}
+
+model driverStandings {
+  driverStandingsId Int     @id @default(autoincrement())
+  raceId            Int     @default(0)
+  driverId          Int     @default(0)
+  points            Float   @default(0) @db.Float
+  position          Int?
+  positionText      String? @db.VarChar(255)
+  wins              Int     @default(0)
+}
+
+model drivers {
+  driverId    Int       @id @default(autoincrement())
+  driverRef   String    @default("") @db.VarChar(255)
+  number      Int?
+  code        String?   @db.VarChar(3)
+  forename    String    @default("") @db.VarChar(255)
+  surname     String    @default("") @db.VarChar(255)
+  dob         DateTime? @db.Date
+  nationality String?   @db.VarChar(255)
+  url         String    @unique(map: "url") @default("") @db.VarChar(255)
+
+  results results[]
+}
+
+model lapTimes {
+  raceId       Int
+  driverId     Int
+  lap          Int
+  position     Int?
+  time         String? @db.VarChar(255)
+  milliseconds Int?
+
+  @@id([raceId, driverId, lap])
+  @@index([raceId], map: "raceId")
+  @@index([raceId], map: "raceId_2")
+}
+
+model pitStops {
+  raceId       Int
+  driverId     Int
+  stop         Int
+  lap          Int
+  time         DateTime @db.Time(0)
+  duration     String?  @db.VarChar(255)
+  milliseconds Int?
+
+  @@id([raceId, driverId, stop])
+  @@index([raceId], map: "raceId")
+}
+
+model qualifying {
+  qualifyId     Int     @id @default(autoincrement())
+  raceId        Int     @default(0)
+  driverId      Int     @default(0)
+  constructorId Int     @default(0)
+  number        Int     @default(0)
+  position      Int?
+  q1            String? @db.VarChar(255)
+  q2            String? @db.VarChar(255)
+  q3            String? @db.VarChar(255)
+}
+
+model seasons {
+  year Int    @id @default(0)
+  url  String @unique(map: "url") @default("") @db.VarChar(255)
+}
+
+model sprintResults {
+  sprintResultId Int     @id @default(autoincrement())
+  raceId         Int     @default(0)
+  driverId       Int     @default(0)
+  constructorId  Int     @default(0)
+  number         Int     @default(0)
+  grid           Int     @default(0)
+  position       Int?
+  positionText   String  @default("") @db.VarChar(255)
+  positionOrder  Int     @default(0)
+  points         Float   @default(0) @db.Float
+  laps           Int     @default(0)
+  time           String? @db.VarChar(255)
+  milliseconds   Int?
+  fastestLap     Int?
+  fastestLapTime String? @db.VarChar(255)
+  statusId       Int     @default(0)
+
+  @@index([raceId], map: "raceId")
+}
+
+model status {
+  statusId Int       @id @default(autoincrement())
+  status   String    @default("") @db.VarChar(255)
+  results  results[]
+}
