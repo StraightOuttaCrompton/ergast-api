@@ -1,0 +1,1470 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /circuits smoke tests /circuits 1`] = `
+[
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-34.9272",
+      "locality": "Adelaide",
+      "long": "138.617",
+    },
+    "circuitId": "adelaide",
+    "circuitName": "Adelaide Street Circuit",
+    "url": "http://en.wikipedia.org/wiki/Adelaide_Street_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Morocco",
+      "lat": "33.5786",
+      "locality": "Casablanca",
+      "long": "-7.6875",
+    },
+    "circuitId": "ain-diab",
+    "circuitName": "Ain Diab",
+    "url": "http://en.wikipedia.org/wiki/Ain-Diab_Circuit",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "53.4769",
+      "locality": "Liverpool",
+      "long": "-2.94056",
+    },
+    "circuitId": "aintree",
+    "circuitName": "Aintree",
+    "url": "http://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-37.8497",
+      "locality": "Melbourne",
+      "long": "144.968",
+    },
+    "circuitId": "albert_park",
+    "circuitName": "Albert Park Grand Prix Circuit",
+    "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "30.1328",
+      "locality": "Austin",
+      "long": "-97.6411",
+    },
+    "circuitId": "americas",
+    "circuitName": "Circuit of the Americas",
+    "url": "http://en.wikipedia.org/wiki/Circuit_of_the_Americas",
+  },
+  {
+    "Location": {
+      "country": "Sweden",
+      "lat": "57.2653",
+      "locality": "Anderstorp",
+      "long": "13.6042",
+    },
+    "circuitId": "anderstorp",
+    "circuitName": "Scandinavian Raceway",
+    "url": "http://en.wikipedia.org/wiki/Scandinavian_Raceway",
+  },
+  {
+    "Location": {
+      "country": "Germany",
+      "lat": "52.4806",
+      "locality": "Berlin",
+      "long": "13.2514",
+    },
+    "circuitId": "avus",
+    "circuitName": "AVUS",
+    "url": "http://en.wikipedia.org/wiki/AVUS",
+  },
+  {
+    "Location": {
+      "country": "Bahrain",
+      "lat": "26.0325",
+      "locality": "Sakhir",
+      "long": "50.5106",
+    },
+    "circuitId": "bahrain",
+    "circuitName": "Bahrain International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Azerbaijan",
+      "lat": "40.3725",
+      "locality": "Baku",
+      "long": "49.8533",
+    },
+    "circuitId": "baku",
+    "circuitName": "Baku City Circuit",
+    "url": "http://en.wikipedia.org/wiki/Baku_City_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Portugal",
+      "lat": "41.1705",
+      "locality": "Oporto",
+      "long": "-8.67325",
+    },
+    "circuitId": "boavista",
+    "circuitName": "Circuito da Boavista",
+    "url": "http://en.wikipedia.org/wiki/Circuito_da_Boavista",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "51.3569",
+      "locality": "Kent",
+      "long": "0.263056",
+    },
+    "circuitId": "brands_hatch",
+    "circuitName": "Brands Hatch",
+    "url": "http://en.wikipedia.org/wiki/Brands_Hatch",
+  },
+  {
+    "Location": {
+      "country": "Switzerland",
+      "lat": "46.9589",
+      "locality": "Bern",
+      "long": "7.40194",
+    },
+    "circuitId": "bremgarten",
+    "circuitName": "Circuit Bremgarten",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Bremgarten",
+  },
+  {
+    "Location": {
+      "country": "India",
+      "lat": "28.3487",
+      "locality": "Uttar Pradesh",
+      "long": "77.5331",
+    },
+    "circuitId": "buddh",
+    "circuitName": "Buddh International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Buddh_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Spain",
+      "lat": "41.57",
+      "locality": "Montmeló",
+      "long": "2.26111",
+    },
+    "circuitId": "catalunya",
+    "circuitName": "Circuit de Barcelona-Catalunya",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "45.7472",
+      "locality": "Clermont-Ferrand",
+      "long": "3.03889",
+    },
+    "circuitId": "charade",
+    "circuitName": "Charade Circuit",
+    "url": "http://en.wikipedia.org/wiki/Charade_Circuit",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "32.7774",
+      "locality": "Dallas",
+      "long": "-96.7587",
+    },
+    "circuitId": "dallas",
+    "circuitName": "Fair Park",
+    "url": "http://en.wikipedia.org/wiki/Fair_Park",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "42.3298",
+      "locality": "Detroit",
+      "long": "-83.0401",
+    },
+    "circuitId": "detroit",
+    "circuitName": "Detroit Street Circuit",
+    "url": "http://en.wikipedia.org/wiki/Detroit_street_circuit",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "47.3625",
+      "locality": "Dijon",
+      "long": "4.89913",
+    },
+    "circuitId": "dijon",
+    "circuitName": "Dijon-Prenois",
+    "url": "http://en.wikipedia.org/wiki/Dijon-Prenois",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "52.8306",
+      "locality": "Castle Donington",
+      "long": "-1.37528",
+    },
+    "circuitId": "donington",
+    "circuitName": "Donington Park",
+    "url": "http://en.wikipedia.org/wiki/Donington_Park",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "49.3306",
+      "locality": "Rouen",
+      "long": "1.00458",
+    },
+    "circuitId": "essarts",
+    "circuitName": "Rouen-Les-Essarts",
+    "url": "http://en.wikipedia.org/wiki/Rouen-Les-Essarts",
+  },
+  {
+    "Location": {
+      "country": "Portugal",
+      "lat": "38.7506",
+      "locality": "Estoril",
+      "long": "-9.39417",
+    },
+    "circuitId": "estoril",
+    "circuitName": "Autódromo do Estoril",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril",
+  },
+  {
+    "Location": {
+      "country": "Japan",
+      "lat": "35.3717",
+      "locality": "Oyama",
+      "long": "138.927",
+    },
+    "circuitId": "fuji",
+    "circuitName": "Fuji Speedway",
+    "url": "http://en.wikipedia.org/wiki/Fuji_Speedway",
+  },
+  {
+    "Location": {
+      "country": "Argentina",
+      "lat": "-34.6943",
+      "locality": "Buenos Aires",
+      "long": "-58.4593",
+    },
+    "circuitId": "galvez",
+    "circuitName": "Autódromo Juan y Oscar Gálvez",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez",
+  },
+  {
+    "Location": {
+      "country": "South Africa",
+      "lat": "-33.0486",
+      "locality": "Eastern Cape Province",
+      "long": "27.8736",
+    },
+    "circuitId": "george",
+    "circuitName": "Prince George Circuit",
+    "url": "http://en.wikipedia.org/wiki/Prince_George_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Germany",
+      "lat": "49.3278",
+      "locality": "Hockenheim",
+      "long": "8.56583",
+    },
+    "circuitId": "hockenheimring",
+    "circuitName": "Hockenheimring",
+    "url": "http://en.wikipedia.org/wiki/Hockenheimring",
+  },
+  {
+    "Location": {
+      "country": "Hungary",
+      "lat": "47.5789",
+      "locality": "Budapest",
+      "long": "19.2486",
+    },
+    "circuitId": "hungaroring",
+    "circuitName": "Hungaroring",
+    "url": "http://en.wikipedia.org/wiki/Hungaroring",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "44.3439",
+      "locality": "Imola",
+      "long": "11.7167",
+    },
+    "circuitId": "imola",
+    "circuitName": "Autodromo Enzo e Dino Ferrari",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "39.795",
+      "locality": "Indianapolis",
+      "long": "-86.2347",
+    },
+    "circuitId": "indianapolis",
+    "circuitName": "Indianapolis Motor Speedway",
+    "url": "http://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
+  },
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "Turkey",
+      "lat": "40.9517",
+      "locality": "Istanbul",
+      "long": "29.405",
+    },
+    "circuitId": "istanbul",
+    "circuitName": "Istanbul Park",
+    "url": "http://en.wikipedia.org/wiki/Istanbul_Park",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=alonso&constructorId=minardi 1`] = `
+[
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-37.8497",
+      "locality": "Melbourne",
+      "long": "144.968",
+    },
+    "circuitId": "albert_park",
+    "circuitName": "Albert Park Grand Prix Circuit",
+    "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Spain",
+      "lat": "41.57",
+      "locality": "Montmeló",
+      "long": "2.26111",
+    },
+    "circuitId": "catalunya",
+    "circuitName": "Circuit de Barcelona-Catalunya",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya",
+  },
+  {
+    "Location": {
+      "country": "Germany",
+      "lat": "49.3278",
+      "locality": "Hockenheim",
+      "long": "8.56583",
+    },
+    "circuitId": "hockenheimring",
+    "circuitName": "Hockenheimring",
+    "url": "http://en.wikipedia.org/wiki/Hockenheimring",
+  },
+  {
+    "Location": {
+      "country": "Hungary",
+      "lat": "47.5789",
+      "locality": "Budapest",
+      "long": "19.2486",
+    },
+    "circuitId": "hungaroring",
+    "circuitName": "Hungaroring",
+    "url": "http://en.wikipedia.org/wiki/Hungaroring",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "44.3439",
+      "locality": "Imola",
+      "long": "11.7167",
+    },
+    "circuitId": "imola",
+    "circuitName": "Autodromo Enzo e Dino Ferrari",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "39.795",
+      "locality": "Indianapolis",
+      "long": "-86.2347",
+    },
+    "circuitId": "indianapolis",
+    "circuitName": "Indianapolis Motor Speedway",
+    "url": "http://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
+  },
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "46.8642",
+      "locality": "Magny Cours",
+      "long": "3.16361",
+    },
+    "circuitId": "magny_cours",
+    "circuitName": "Circuit de Nevers Magny-Cours",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours",
+  },
+  {
+    "Location": {
+      "country": "Monaco",
+      "lat": "43.7347",
+      "locality": "Monte-Carlo",
+      "long": "7.42056",
+    },
+    "circuitId": "monaco",
+    "circuitName": "Circuit de Monaco",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Monaco",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "45.6156",
+      "locality": "Monza",
+      "long": "9.28111",
+    },
+    "circuitId": "monza",
+    "circuitName": "Autodromo Nazionale di Monza",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza",
+  },
+  {
+    "Location": {
+      "country": "Germany",
+      "lat": "50.3356",
+      "locality": "Nürburg",
+      "long": "6.9475",
+    },
+    "circuitId": "nurburgring",
+    "circuitName": "Nürburgring",
+    "url": "http://en.wikipedia.org/wiki/N%C3%BCrburgring",
+  },
+  {
+    "Location": {
+      "country": "Austria",
+      "lat": "47.2197",
+      "locality": "Spielberg",
+      "long": "14.7647",
+    },
+    "circuitId": "red_bull_ring",
+    "circuitName": "Red Bull Ring",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Ring",
+  },
+  {
+    "Location": {
+      "country": "Malaysia",
+      "lat": "2.76083",
+      "locality": "Kuala Lumpur",
+      "long": "101.738",
+    },
+    "circuitId": "sepang",
+    "circuitName": "Sepang International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Sepang_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "52.0786",
+      "locality": "Silverstone",
+      "long": "-1.01694",
+    },
+    "circuitId": "silverstone",
+    "circuitName": "Silverstone Circuit",
+    "url": "http://en.wikipedia.org/wiki/Silverstone_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Belgium",
+      "lat": "50.4372",
+      "locality": "Spa",
+      "long": "5.97139",
+    },
+    "circuitId": "spa",
+    "circuitName": "Circuit de Spa-Francorchamps",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
+  },
+  {
+    "Location": {
+      "country": "Japan",
+      "lat": "34.8431",
+      "locality": "Suzuka",
+      "long": "136.541",
+    },
+    "circuitId": "suzuka",
+    "circuitName": "Suzuka Circuit",
+    "url": "http://en.wikipedia.org/wiki/Suzuka_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Canada",
+      "lat": "45.5",
+      "locality": "Montreal",
+      "long": "-73.5228",
+    },
+    "circuitId": "villeneuve",
+    "circuitName": "Circuit Gilles Villeneuve",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=bottas 1`] = `
+[
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-37.8497",
+      "locality": "Melbourne",
+      "long": "144.968",
+    },
+    "circuitId": "albert_park",
+    "circuitName": "Albert Park Grand Prix Circuit",
+    "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "30.1328",
+      "locality": "Austin",
+      "long": "-97.6411",
+    },
+    "circuitId": "americas",
+    "circuitName": "Circuit of the Americas",
+    "url": "http://en.wikipedia.org/wiki/Circuit_of_the_Americas",
+  },
+  {
+    "Location": {
+      "country": "Bahrain",
+      "lat": "26.0325",
+      "locality": "Sakhir",
+      "long": "50.5106",
+    },
+    "circuitId": "bahrain",
+    "circuitName": "Bahrain International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Azerbaijan",
+      "lat": "40.3725",
+      "locality": "Baku",
+      "long": "49.8533",
+    },
+    "circuitId": "baku",
+    "circuitName": "Baku City Circuit",
+    "url": "http://en.wikipedia.org/wiki/Baku_City_Circuit",
+  },
+  {
+    "Location": {
+      "country": "India",
+      "lat": "28.3487",
+      "locality": "Uttar Pradesh",
+      "long": "77.5331",
+    },
+    "circuitId": "buddh",
+    "circuitName": "Buddh International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Buddh_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Spain",
+      "lat": "41.57",
+      "locality": "Montmeló",
+      "long": "2.26111",
+    },
+    "circuitId": "catalunya",
+    "circuitName": "Circuit de Barcelona-Catalunya",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya",
+  },
+  {
+    "Location": {
+      "country": "Germany",
+      "lat": "49.3278",
+      "locality": "Hockenheim",
+      "long": "8.56583",
+    },
+    "circuitId": "hockenheimring",
+    "circuitName": "Hockenheimring",
+    "url": "http://en.wikipedia.org/wiki/Hockenheimring",
+  },
+  {
+    "Location": {
+      "country": "Hungary",
+      "lat": "47.5789",
+      "locality": "Budapest",
+      "long": "19.2486",
+    },
+    "circuitId": "hungaroring",
+    "circuitName": "Hungaroring",
+    "url": "http://en.wikipedia.org/wiki/Hungaroring",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "44.3439",
+      "locality": "Imola",
+      "long": "11.7167",
+    },
+    "circuitId": "imola",
+    "circuitName": "Autodromo Enzo e Dino Ferrari",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari",
+  },
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "Turkey",
+      "lat": "40.9517",
+      "locality": "Istanbul",
+      "long": "29.405",
+    },
+    "circuitId": "istanbul",
+    "circuitName": "Istanbul Park",
+    "url": "http://en.wikipedia.org/wiki/Istanbul_Park",
+  },
+  {
+    "Location": {
+      "country": "Saudi Arabia",
+      "lat": "21.6319",
+      "locality": "Jeddah",
+      "long": "39.1044",
+    },
+    "circuitId": "jeddah",
+    "circuitName": "Jeddah Corniche Circuit",
+    "url": "http://en.wikipedia.org/wiki/Jeddah_Street_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Qatar",
+      "lat": "25.49",
+      "locality": "Al Daayen",
+      "long": "51.4542",
+    },
+    "circuitId": "losail",
+    "circuitName": "Losail International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Losail_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Singapore",
+      "lat": "1.2914",
+      "locality": "Marina Bay",
+      "long": "103.864",
+    },
+    "circuitId": "marina_bay",
+    "circuitName": "Marina Bay Street Circuit",
+    "url": "http://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "25.9581",
+      "locality": "Miami",
+      "long": "-80.2389",
+    },
+    "circuitId": "miami",
+    "circuitName": "Miami International Autodrome",
+    "url": "http://en.wikipedia.org/wiki/Miami_International_Autodrome",
+  },
+  {
+    "Location": {
+      "country": "Monaco",
+      "lat": "43.7347",
+      "locality": "Monte-Carlo",
+      "long": "7.42056",
+    },
+    "circuitId": "monaco",
+    "circuitName": "Circuit de Monaco",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Monaco",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "45.6156",
+      "locality": "Monza",
+      "long": "9.28111",
+    },
+    "circuitId": "monza",
+    "circuitName": "Autodromo Nazionale di Monza",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "43.9975",
+      "locality": "Mugello",
+      "long": "11.3719",
+    },
+    "circuitId": "mugello",
+    "circuitName": "Autodromo Internazionale del Mugello",
+    "url": "http://en.wikipedia.org/wiki/Mugello_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Germany",
+      "lat": "50.3356",
+      "locality": "Nürburg",
+      "long": "6.9475",
+    },
+    "circuitId": "nurburgring",
+    "circuitName": "Nürburgring",
+    "url": "http://en.wikipedia.org/wiki/N%C3%BCrburgring",
+  },
+  {
+    "Location": {
+      "country": "Portugal",
+      "lat": "37.227",
+      "locality": "Portimão",
+      "long": "-8.6267",
+    },
+    "circuitId": "portimao",
+    "circuitName": "Autódromo Internacional do Algarve",
+    "url": "http://en.wikipedia.org/wiki/Algarve_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Austria",
+      "lat": "47.2197",
+      "locality": "Spielberg",
+      "long": "14.7647",
+    },
+    "circuitId": "red_bull_ring",
+    "circuitName": "Red Bull Ring",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Ring",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "43.2506",
+      "locality": "Le Castellet",
+      "long": "5.79167",
+    },
+    "circuitId": "ricard",
+    "circuitName": "Circuit Paul Ricard",
+    "url": "http://en.wikipedia.org/wiki/Paul_Ricard_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Mexico",
+      "lat": "19.4042",
+      "locality": "Mexico City",
+      "long": "-99.0907",
+    },
+    "circuitId": "rodriguez",
+    "circuitName": "Autódromo Hermanos Rodríguez",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez",
+  },
+  {
+    "Location": {
+      "country": "Malaysia",
+      "lat": "2.76083",
+      "locality": "Kuala Lumpur",
+      "long": "101.738",
+    },
+    "circuitId": "sepang",
+    "circuitName": "Sepang International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Sepang_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "China",
+      "lat": "31.3389",
+      "locality": "Shanghai",
+      "long": "121.22",
+    },
+    "circuitId": "shanghai",
+    "circuitName": "Shanghai International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Shanghai_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "52.0786",
+      "locality": "Silverstone",
+      "long": "-1.01694",
+    },
+    "circuitId": "silverstone",
+    "circuitName": "Silverstone Circuit",
+    "url": "http://en.wikipedia.org/wiki/Silverstone_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Russia",
+      "lat": "43.4057",
+      "locality": "Sochi",
+      "long": "39.9578",
+    },
+    "circuitId": "sochi",
+    "circuitName": "Sochi Autodrom",
+    "url": "http://en.wikipedia.org/wiki/Sochi_Autodrom",
+  },
+  {
+    "Location": {
+      "country": "Belgium",
+      "lat": "50.4372",
+      "locality": "Spa",
+      "long": "5.97139",
+    },
+    "circuitId": "spa",
+    "circuitName": "Circuit de Spa-Francorchamps",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
+  },
+  {
+    "Location": {
+      "country": "Japan",
+      "lat": "34.8431",
+      "locality": "Suzuka",
+      "long": "136.541",
+    },
+    "circuitId": "suzuka",
+    "circuitName": "Suzuka Circuit",
+    "url": "http://en.wikipedia.org/wiki/Suzuka_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Canada",
+      "lat": "45.5",
+      "locality": "Montreal",
+      "long": "-73.5228",
+    },
+    "circuitId": "villeneuve",
+    "circuitName": "Circuit Gilles Villeneuve",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=hamilton&result=2&year=2022 1`] = `
+[
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "30.1328",
+      "locality": "Austin",
+      "long": "-97.6411",
+    },
+    "circuitId": "americas",
+    "circuitName": "Circuit of the Americas",
+    "url": "http://en.wikipedia.org/wiki/Circuit_of_the_Americas",
+  },
+  {
+    "Location": {
+      "country": "Hungary",
+      "lat": "47.5789",
+      "locality": "Budapest",
+      "long": "19.2486",
+    },
+    "circuitId": "hungaroring",
+    "circuitName": "Hungaroring",
+    "url": "http://en.wikipedia.org/wiki/Hungaroring",
+  },
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "43.2506",
+      "locality": "Le Castellet",
+      "long": "5.79167",
+    },
+    "circuitId": "ricard",
+    "circuitName": "Circuit Paul Ricard",
+    "url": "http://en.wikipedia.org/wiki/Paul_Ricard_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Mexico",
+      "lat": "19.4042",
+      "locality": "Mexico City",
+      "long": "-99.0907",
+    },
+    "circuitId": "rodriguez",
+    "circuitName": "Autódromo Hermanos Rodríguez",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=hamilton&year=2022 1`] = `
+[
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-37.8497",
+      "locality": "Melbourne",
+      "long": "144.968",
+    },
+    "circuitId": "albert_park",
+    "circuitName": "Albert Park Grand Prix Circuit",
+    "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "30.1328",
+      "locality": "Austin",
+      "long": "-97.6411",
+    },
+    "circuitId": "americas",
+    "circuitName": "Circuit of the Americas",
+    "url": "http://en.wikipedia.org/wiki/Circuit_of_the_Americas",
+  },
+  {
+    "Location": {
+      "country": "Bahrain",
+      "lat": "26.0325",
+      "locality": "Sakhir",
+      "long": "50.5106",
+    },
+    "circuitId": "bahrain",
+    "circuitName": "Bahrain International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Azerbaijan",
+      "lat": "40.3725",
+      "locality": "Baku",
+      "long": "49.8533",
+    },
+    "circuitId": "baku",
+    "circuitName": "Baku City Circuit",
+    "url": "http://en.wikipedia.org/wiki/Baku_City_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Spain",
+      "lat": "41.57",
+      "locality": "Montmeló",
+      "long": "2.26111",
+    },
+    "circuitId": "catalunya",
+    "circuitName": "Circuit de Barcelona-Catalunya",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya",
+  },
+  {
+    "Location": {
+      "country": "Hungary",
+      "lat": "47.5789",
+      "locality": "Budapest",
+      "long": "19.2486",
+    },
+    "circuitId": "hungaroring",
+    "circuitName": "Hungaroring",
+    "url": "http://en.wikipedia.org/wiki/Hungaroring",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "44.3439",
+      "locality": "Imola",
+      "long": "11.7167",
+    },
+    "circuitId": "imola",
+    "circuitName": "Autodromo Enzo e Dino Ferrari",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari",
+  },
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "Saudi Arabia",
+      "lat": "21.6319",
+      "locality": "Jeddah",
+      "long": "39.1044",
+    },
+    "circuitId": "jeddah",
+    "circuitName": "Jeddah Corniche Circuit",
+    "url": "http://en.wikipedia.org/wiki/Jeddah_Street_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Singapore",
+      "lat": "1.2914",
+      "locality": "Marina Bay",
+      "long": "103.864",
+    },
+    "circuitId": "marina_bay",
+    "circuitName": "Marina Bay Street Circuit",
+    "url": "http://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit",
+  },
+  {
+    "Location": {
+      "country": "USA",
+      "lat": "25.9581",
+      "locality": "Miami",
+      "long": "-80.2389",
+    },
+    "circuitId": "miami",
+    "circuitName": "Miami International Autodrome",
+    "url": "http://en.wikipedia.org/wiki/Miami_International_Autodrome",
+  },
+  {
+    "Location": {
+      "country": "Monaco",
+      "lat": "43.7347",
+      "locality": "Monte-Carlo",
+      "long": "7.42056",
+    },
+    "circuitId": "monaco",
+    "circuitName": "Circuit de Monaco",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Monaco",
+  },
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "45.6156",
+      "locality": "Monza",
+      "long": "9.28111",
+    },
+    "circuitId": "monza",
+    "circuitName": "Autodromo Nazionale di Monza",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza",
+  },
+  {
+    "Location": {
+      "country": "Austria",
+      "lat": "47.2197",
+      "locality": "Spielberg",
+      "long": "14.7647",
+    },
+    "circuitId": "red_bull_ring",
+    "circuitName": "Red Bull Ring",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Ring",
+  },
+  {
+    "Location": {
+      "country": "France",
+      "lat": "43.2506",
+      "locality": "Le Castellet",
+      "long": "5.79167",
+    },
+    "circuitId": "ricard",
+    "circuitName": "Circuit Paul Ricard",
+    "url": "http://en.wikipedia.org/wiki/Paul_Ricard_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Mexico",
+      "lat": "19.4042",
+      "locality": "Mexico City",
+      "long": "-99.0907",
+    },
+    "circuitId": "rodriguez",
+    "circuitName": "Autódromo Hermanos Rodríguez",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "52.0786",
+      "locality": "Silverstone",
+      "long": "-1.01694",
+    },
+    "circuitId": "silverstone",
+    "circuitName": "Silverstone Circuit",
+    "url": "http://en.wikipedia.org/wiki/Silverstone_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Belgium",
+      "lat": "50.4372",
+      "locality": "Spa",
+      "long": "5.97139",
+    },
+    "circuitId": "spa",
+    "circuitName": "Circuit de Spa-Francorchamps",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
+  },
+  {
+    "Location": {
+      "country": "Japan",
+      "lat": "34.8431",
+      "locality": "Suzuka",
+      "long": "136.541",
+    },
+    "circuitId": "suzuka",
+    "circuitName": "Suzuka Circuit",
+    "url": "http://en.wikipedia.org/wiki/Suzuka_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Canada",
+      "lat": "45.5",
+      "locality": "Montreal",
+      "long": "-73.5228",
+    },
+    "circuitId": "villeneuve",
+    "circuitName": "Circuit Gilles Villeneuve",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+  },
+  {
+    "Location": {
+      "country": "UAE",
+      "lat": "24.4672",
+      "locality": "Abu Dhabi",
+      "long": "54.6031",
+    },
+    "circuitId": "yas_marina",
+    "circuitName": "Yas Marina Circuit",
+    "url": "http://en.wikipedia.org/wiki/Yas_Marina_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Netherlands",
+      "lat": "52.3888",
+      "locality": "Zandvoort",
+      "long": "4.54092",
+    },
+    "circuitId": "zandvoort",
+    "circuitName": "Circuit Park Zandvoort",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Zandvoort",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=maldonado&status=4 1`] = `
+[
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "Monaco",
+      "lat": "43.7347",
+      "locality": "Monte-Carlo",
+      "long": "7.42056",
+    },
+    "circuitId": "monaco",
+    "circuitName": "Circuit de Monaco",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Monaco",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "52.0786",
+      "locality": "Silverstone",
+      "long": "-1.01694",
+    },
+    "circuitId": "silverstone",
+    "circuitName": "Silverstone Circuit",
+    "url": "http://en.wikipedia.org/wiki/Silverstone_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Belgium",
+      "lat": "50.4372",
+      "locality": "Spa",
+      "long": "5.97139",
+    },
+    "circuitId": "spa",
+    "circuitName": "Circuit de Spa-Francorchamps",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
+  },
+  {
+    "Location": {
+      "country": "UAE",
+      "lat": "24.4672",
+      "locality": "Abu Dhabi",
+      "long": "54.6031",
+    },
+    "circuitId": "yas_marina",
+    "circuitName": "Yas Marina Circuit",
+    "url": "http://en.wikipedia.org/wiki/Yas_Marina_Circuit",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=max_verstappen&grid=1&year=2022 1`] = `
+[
+  {
+    "Location": {
+      "country": "Italy",
+      "lat": "44.3439",
+      "locality": "Imola",
+      "long": "11.7167",
+    },
+    "circuitId": "imola",
+    "circuitName": "Autodromo Enzo e Dino Ferrari",
+    "url": "http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari",
+  },
+  {
+    "Location": {
+      "country": "Austria",
+      "lat": "47.2197",
+      "locality": "Spielberg",
+      "long": "14.7647",
+    },
+    "circuitId": "red_bull_ring",
+    "circuitName": "Red Bull Ring",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Ring",
+  },
+  {
+    "Location": {
+      "country": "Mexico",
+      "lat": "19.4042",
+      "locality": "Mexico City",
+      "long": "-99.0907",
+    },
+    "circuitId": "rodriguez",
+    "circuitName": "Autódromo Hermanos Rodríguez",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez",
+  },
+  {
+    "Location": {
+      "country": "Japan",
+      "lat": "34.8431",
+      "locality": "Suzuka",
+      "long": "136.541",
+    },
+    "circuitId": "suzuka",
+    "circuitName": "Suzuka Circuit",
+    "url": "http://en.wikipedia.org/wiki/Suzuka_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Canada",
+      "lat": "45.5",
+      "locality": "Montreal",
+      "long": "-73.5228",
+    },
+    "circuitId": "villeneuve",
+    "circuitName": "Circuit Gilles Villeneuve",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+  },
+  {
+    "Location": {
+      "country": "UAE",
+      "lat": "24.4672",
+      "locality": "Abu Dhabi",
+      "long": "54.6031",
+    },
+    "circuitId": "yas_marina",
+    "circuitName": "Yas Marina Circuit",
+    "url": "http://en.wikipedia.org/wiki/Yas_Marina_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Netherlands",
+      "lat": "52.3888",
+      "locality": "Zandvoort",
+      "long": "4.54092",
+    },
+    "circuitId": "zandvoort",
+    "circuitName": "Circuit Park Zandvoort",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Zandvoort",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=sainz&fastest=1&year=2022 1`] = `
+[
+  {
+    "Location": {
+      "country": "France",
+      "lat": "43.2506",
+      "locality": "Le Castellet",
+      "long": "5.79167",
+    },
+    "circuitId": "ricard",
+    "circuitName": "Circuit Paul Ricard",
+    "url": "http://en.wikipedia.org/wiki/Paul_Ricard_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Canada",
+      "lat": "45.5",
+      "locality": "Montreal",
+      "long": "-73.5228",
+    },
+    "circuitId": "villeneuve",
+    "circuitName": "Circuit Gilles Villeneuve",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?driverId=vettel&constructorId=ferrari&result=1 1`] = `
+[
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-37.8497",
+      "locality": "Melbourne",
+      "long": "144.968",
+    },
+    "circuitId": "albert_park",
+    "circuitName": "Albert Park Grand Prix Circuit",
+    "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Bahrain",
+      "lat": "26.0325",
+      "locality": "Sakhir",
+      "long": "50.5106",
+    },
+    "circuitId": "bahrain",
+    "circuitName": "Bahrain International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Hungary",
+      "lat": "47.5789",
+      "locality": "Budapest",
+      "long": "19.2486",
+    },
+    "circuitId": "hungaroring",
+    "circuitName": "Hungaroring",
+    "url": "http://en.wikipedia.org/wiki/Hungaroring",
+  },
+  {
+    "Location": {
+      "country": "Brazil",
+      "lat": "-23.7036",
+      "locality": "São Paulo",
+      "long": "-46.6997",
+    },
+    "circuitId": "interlagos",
+    "circuitName": "Autódromo José Carlos Pace",
+    "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+  },
+  {
+    "Location": {
+      "country": "Singapore",
+      "lat": "1.2914",
+      "locality": "Marina Bay",
+      "long": "103.864",
+    },
+    "circuitId": "marina_bay",
+    "circuitName": "Marina Bay Street Circuit",
+    "url": "http://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Monaco",
+      "lat": "43.7347",
+      "locality": "Monte-Carlo",
+      "long": "7.42056",
+    },
+    "circuitId": "monaco",
+    "circuitName": "Circuit de Monaco",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Monaco",
+  },
+  {
+    "Location": {
+      "country": "Malaysia",
+      "lat": "2.76083",
+      "locality": "Kuala Lumpur",
+      "long": "101.738",
+    },
+    "circuitId": "sepang",
+    "circuitName": "Sepang International Circuit",
+    "url": "http://en.wikipedia.org/wiki/Sepang_International_Circuit",
+  },
+  {
+    "Location": {
+      "country": "UK",
+      "lat": "52.0786",
+      "locality": "Silverstone",
+      "long": "-1.01694",
+    },
+    "circuitId": "silverstone",
+    "circuitName": "Silverstone Circuit",
+    "url": "http://en.wikipedia.org/wiki/Silverstone_Circuit",
+  },
+  {
+    "Location": {
+      "country": "Belgium",
+      "lat": "50.4372",
+      "locality": "Spa",
+      "long": "5.97139",
+    },
+    "circuitId": "spa",
+    "circuitName": "Circuit de Spa-Francorchamps",
+    "url": "http://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps",
+  },
+  {
+    "Location": {
+      "country": "Canada",
+      "lat": "45.5",
+      "locality": "Montreal",
+      "long": "-73.5228",
+    },
+    "circuitId": "villeneuve",
+    "circuitName": "Circuit Gilles Villeneuve",
+    "url": "http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve",
+  },
+]
+`;
+
+exports[`GET /circuits smoke tests /circuits?year=2010&round=2 1`] = `
+[
+  {
+    "Location": {
+      "country": "Australia",
+      "lat": "-37.8497",
+      "locality": "Melbourne",
+      "long": "144.968",
+    },
+    "circuitId": "albert_park",
+    "circuitName": "Albert Park Grand Prix Circuit",
+    "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+  },
+]
+`;
