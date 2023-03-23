@@ -1468,3 +1468,17 @@ exports[`GET /circuits smoke tests /circuits?year=2010&round=2 1`] = `
   },
 ]
 `;
+
+exports[`GET /circuits/\${circuitId} smoke tests /circuits/monza 1`] = `
+{
+  "Location": {
+    "country": "Italy",
+    "lat": "45.6156",
+    "locality": "Monza",
+    "long": "9.28111",
+  },
+  "circuitId": "monza",
+  "circuitName": "Autodromo Nazionale di Monza",
+  "url": "http://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza",
+}
+`;

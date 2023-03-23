@@ -2,6 +2,12 @@ import querystring from "querystring";
 import { GetCircuitsDto } from "../../../src/circuits/dto/get-circuits.dto";
 import { getMigrationTest } from "../migrationUtils";
 
+describe("GET /circuits/${circuitId} smoke tests", () => {
+    const migrationTest = getMigrationTest((response) => response.MRData.CircuitTable.Circuits[0]);
+
+    migrationTest("/circuits/monza", `https://ergast.com/api/f1/circuits/monza.json`);
+});
+
 describe("GET /circuits smoke tests", () => {
     const migrationTest = getMigrationTest((response) => response.MRData.CircuitTable.Circuits);
 
