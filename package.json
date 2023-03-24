@@ -23,7 +23,9 @@
         "test:migration": "jest --config ./test/migration/jest-migration.json",
         "test:migration:update": "yarn test:migration -u",
         "test:migration:cov": "yarn test:migration --coverage",
-        "postinstall": "husky install"
+        "postinstall": "husky install",
+        "prisma:generate": "prisma generate",
+        "prisma:studio": "prisma studio"
     },
     "dependencies": {
         "@nestjs/common": "^9.0.0",
