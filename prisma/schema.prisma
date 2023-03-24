@@ -124,7 +124,7 @@ model driverStandings {
 
 model drivers {
   driverId    Int       @id @default(autoincrement())
-  driverRef   String    @default("") @db.VarChar(255)
+  driverRef   String    @unique @default("") @db.VarChar(255)
   number      Int?
   code        String?   @db.VarChar(3)
   forename    String    @default("") @db.VarChar(255)
