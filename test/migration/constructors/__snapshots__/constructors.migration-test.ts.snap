@@ -1,0 +1,484 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /constructors smoke tests /constructors 1`] = `
+[
+  {
+    "constructorId": "adams",
+    "name": "Adams",
+    "nationality": "American",
+    "url": "http://en.wikipedia.org/wiki/Adams_(constructor)",
+  },
+  {
+    "constructorId": "afm",
+    "name": "AFM",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Alex_von_Falkenhausen_Motorenbau",
+  },
+  {
+    "constructorId": "ags",
+    "name": "AGS",
+    "nationality": "French",
+    "url": "http://en.wikipedia.org/wiki/Automobiles_Gonfaronnaises_Sportives",
+  },
+  {
+    "constructorId": "alfa",
+    "name": "Alfa Romeo",
+    "nationality": "Swiss",
+    "url": "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
+  },
+  {
+    "constructorId": "alphatauri",
+    "name": "AlphaTauri",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
+  },
+  {
+    "constructorId": "alpine",
+    "name": "Alpine F1 Team",
+    "nationality": "French",
+    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+  },
+  {
+    "constructorId": "alta",
+    "name": "Alta",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Alta_auto_racing_team",
+  },
+  {
+    "constructorId": "amon",
+    "name": "Amon",
+    "nationality": "New Zealander",
+    "url": "http://en.wikipedia.org/wiki/Amon_(Formula_One_team)",
+  },
+  {
+    "constructorId": "moda",
+    "name": "Andrea Moda",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Andrea_Moda_Formula",
+  },
+  {
+    "constructorId": "apollon",
+    "name": "Apollon",
+    "nationality": "Swiss",
+    "url": "http://en.wikipedia.org/wiki/Apollon_(Formula_One)",
+  },
+  {
+    "constructorId": "arrows",
+    "name": "Arrows",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Arrows_Grand_Prix_International",
+  },
+  {
+    "constructorId": "arzani-volpini",
+    "name": "Arzani-Volpini",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Arzani-Volpini",
+  },
+  {
+    "constructorId": "butterworth",
+    "name": "Aston Butterworth",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Aston_Butterworth",
+  },
+  {
+    "constructorId": "aston_martin",
+    "name": "Aston Martin",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+  },
+  {
+    "constructorId": "ats",
+    "name": "ATS",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/ATS_(wheels)",
+  },
+  {
+    "constructorId": "bar",
+    "name": "BAR",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/British_American_Racing",
+  },
+  {
+    "constructorId": "behra-porsche",
+    "name": "Behra-Porsche",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Behra-Porsche",
+  },
+  {
+    "constructorId": "bellasi",
+    "name": "Bellasi",
+    "nationality": "Swiss",
+    "url": "http://en.wikipedia.org/wiki/Bellasi",
+  },
+  {
+    "constructorId": "benetton",
+    "name": "Benetton",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Benetton_Formula",
+  },
+  {
+    "constructorId": "bmw",
+    "name": "BMW",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/BMW",
+  },
+  {
+    "constructorId": "bmw_sauber",
+    "name": "BMW Sauber",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/BMW_Sauber",
+  },
+  {
+    "constructorId": "boro",
+    "name": "Boro",
+    "nationality": "Dutch",
+    "url": "http://en.wikipedia.org/wiki/Boro_(Formula_One)",
+  },
+  {
+    "constructorId": "brabham",
+    "name": "Brabham",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brabham",
+  },
+  {
+    "constructorId": "brabham-alfa_romeo",
+    "name": "Brabham-Alfa Romeo",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brabham",
+  },
+  {
+    "constructorId": "brabham-brm",
+    "name": "Brabham-BRM",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brabham",
+  },
+  {
+    "constructorId": "brabham-climax",
+    "name": "Brabham-Climax",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brabham",
+  },
+  {
+    "constructorId": "brabham-ford",
+    "name": "Brabham-Ford",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brabham",
+  },
+  {
+    "constructorId": "brabham-repco",
+    "name": "Brabham-Repco",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brabham",
+  },
+  {
+    "constructorId": "brawn",
+    "name": "Brawn",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Brawn_GP",
+  },
+  {
+    "constructorId": "brm",
+    "name": "BRM",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/BRM",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?constructorStandings=1&year=2021 1`] = `
+[
+  {
+    "constructorId": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=alonso&circuitId=monza 1`] = `
+[
+  {
+    "constructorId": "alpine",
+    "name": "Alpine F1 Team",
+    "nationality": "French",
+    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+  },
+  {
+    "constructorId": "ferrari",
+    "name": "Ferrari",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+  },
+  {
+    "constructorId": "mclaren",
+    "name": "McLaren",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/McLaren",
+  },
+  {
+    "constructorId": "minardi",
+    "name": "Minardi",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Minardi",
+  },
+  {
+    "constructorId": "renault",
+    "name": "Renault",
+    "nationality": "French",
+    "url": "http://en.wikipedia.org/wiki/Renault_in_Formula_One",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=bottas 1`] = `
+[
+  {
+    "constructorId": "alfa",
+    "name": "Alfa Romeo",
+    "nationality": "Swiss",
+    "url": "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
+  },
+  {
+    "constructorId": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+  },
+  {
+    "constructorId": "williams",
+    "name": "Williams",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=hamilton&result=2&year=2022 1`] = `
+[
+  {
+    "constructorId": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=hamilton&year=2022 1`] = `
+[
+  {
+    "constructorId": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=maldonado&status=4 1`] = `
+[
+  {
+    "constructorId": "lotus_f1",
+    "name": "Lotus F1",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Lotus_F1",
+  },
+  {
+    "constructorId": "williams",
+    "name": "Williams",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=max_verstappen&grid=1&year=2022 1`] = `
+[
+  {
+    "constructorId": "red_bull",
+    "name": "Red Bull",
+    "nationality": "Austrian",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=sainz&fastest=1&year=2022 1`] = `
+[
+  {
+    "constructorId": "ferrari",
+    "name": "Ferrari",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?driverId=vettel&circuitId=bahrain&result=1 1`] = `
+[
+  {
+    "constructorId": "ferrari",
+    "name": "Ferrari",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+  },
+  {
+    "constructorId": "red_bull",
+    "name": "Red Bull",
+    "nationality": "Austrian",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?year=2010&round=2 1`] = `
+[
+  {
+    "constructorId": "ferrari",
+    "name": "Ferrari",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+  },
+  {
+    "constructorId": "force_india",
+    "name": "Force India",
+    "nationality": "Indian",
+    "url": "http://en.wikipedia.org/wiki/Racing_Point_Force_India",
+  },
+  {
+    "constructorId": "hrt",
+    "name": "HRT",
+    "nationality": "Spanish",
+    "url": "http://en.wikipedia.org/wiki/Hispania_Racing",
+  },
+  {
+    "constructorId": "lotus_racing",
+    "name": "Lotus",
+    "nationality": "Malaysian",
+    "url": "http://en.wikipedia.org/wiki/Lotus_Racing",
+  },
+  {
+    "constructorId": "mclaren",
+    "name": "McLaren",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/McLaren",
+  },
+  {
+    "constructorId": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+  },
+  {
+    "constructorId": "red_bull",
+    "name": "Red Bull",
+    "nationality": "Austrian",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+  },
+  {
+    "constructorId": "renault",
+    "name": "Renault",
+    "nationality": "French",
+    "url": "http://en.wikipedia.org/wiki/Renault_in_Formula_One",
+  },
+  {
+    "constructorId": "sauber",
+    "name": "Sauber",
+    "nationality": "Swiss",
+    "url": "http://en.wikipedia.org/wiki/Sauber",
+  },
+  {
+    "constructorId": "toro_rosso",
+    "name": "Toro Rosso",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso",
+  },
+  {
+    "constructorId": "virgin",
+    "name": "Virgin",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Virgin_Racing",
+  },
+  {
+    "constructorId": "williams",
+    "name": "Williams",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
+  },
+]
+`;
+
+exports[`GET /constructors smoke tests /constructors?year=2022 1`] = `
+[
+  {
+    "constructorId": "alfa",
+    "name": "Alfa Romeo",
+    "nationality": "Swiss",
+    "url": "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
+  },
+  {
+    "constructorId": "alphatauri",
+    "name": "AlphaTauri",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
+  },
+  {
+    "constructorId": "alpine",
+    "name": "Alpine F1 Team",
+    "nationality": "French",
+    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+  },
+  {
+    "constructorId": "aston_martin",
+    "name": "Aston Martin",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+  },
+  {
+    "constructorId": "ferrari",
+    "name": "Ferrari",
+    "nationality": "Italian",
+    "url": "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+  },
+  {
+    "constructorId": "haas",
+    "name": "Haas F1 Team",
+    "nationality": "American",
+    "url": "http://en.wikipedia.org/wiki/Haas_F1_Team",
+  },
+  {
+    "constructorId": "mclaren",
+    "name": "McLaren",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/McLaren",
+  },
+  {
+    "constructorId": "mercedes",
+    "name": "Mercedes",
+    "nationality": "German",
+    "url": "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+  },
+  {
+    "constructorId": "red_bull",
+    "name": "Red Bull",
+    "nationality": "Austrian",
+    "url": "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+  },
+  {
+    "constructorId": "williams",
+    "name": "Williams",
+    "nationality": "British",
+    "url": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
+  },
+]
+`;
+
+exports[`GET /constructors/\${constructorId} smoke tests /constructors/red_bull 1`] = `
+{
+  "constructorId": "red_bull",
+  "name": "Red Bull",
+  "nationality": "Austrian",
+  "url": "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+}
+`;
