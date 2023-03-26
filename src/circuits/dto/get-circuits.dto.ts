@@ -1,23 +1,8 @@
 import { Type } from "class-transformer";
 import { IsInt, IsNotEmpty, IsOptional, IsPositive } from "class-validator";
+import { CommonDto } from "../../common.dto";
 
-export class GetCircuitsDto {
-    /**
-     * TODO: extract into class which this inherits from
-     */
-    @IsOptional()
-    @IsInt()
-    @IsPositive()
-    offset: number;
-
-    @IsOptional()
-    @IsInt()
-    @IsPositive()
-    limit: number;
-    /**
-     * --------------------------------------------------
-     */
-
+export class GetCircuitsDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
     driverId: string;
