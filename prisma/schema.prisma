@@ -50,7 +50,7 @@ model races {
 
 model constructors {
   constructorId  Int     @id @default(autoincrement())
-  constructorRef String  @default("") @db.VarChar(255)
+  constructorRef String  @unique @default("") @db.VarChar(255)
   name           String  @unique(map: "name") @default("") @db.VarChar(255)
   nationality    String? @db.VarChar(255)
   url            String  @default("") @db.VarChar(255)
