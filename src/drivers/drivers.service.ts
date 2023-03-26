@@ -21,9 +21,8 @@ export class DriversService {
         grid,
         fastest,
         driverStandings,
-        constructorStandings, // TODO: at them moment, constructor standings doesn't quite make sense
     }: GetDriversDto) {
-        if ((driverStandings || constructorStandings) && (circuitId || grid || result || status)) {
+        if (driverStandings && (circuitId || grid || result || status)) {
             throw new HttpException(
                 "Cannot combine standings with circuit, grid, result or status qualifiers.",
                 HttpStatus.BAD_REQUEST
@@ -34,7 +33,7 @@ export class DriversService {
             SELECT DISTINCT drivers.*,DATE_FORMAT(dob, '%Y-%m-%d') AS 'date' 
             FROM drivers
             ${
-                year !== undefined || circuitId !== undefined || driverStandings !== undefined || constructorStandings
+                year !== undefined || circuitId !== undefined || driverStandings !== undefined
                     ? Prisma.sql`, races`
                     : Prisma.empty
             }
@@ -49,19 +48,14 @@ export class DriversService {
                     ? Prisma.sql`, results`
                     : Prisma.empty
             }
-            ${
-                driverStandings !== undefined || constructorStandings !== undefined
-                    ? Prisma.sql`, driverStandings`
-                    : Prisma.empty
-            }
-            ${constructorStandings !== undefined ? Prisma.sql`, constructorStandings` : Prisma.empty}
+            ${driverStandings !== undefined ? Prisma.sql`, driverStandings` : Prisma.empty}
             ${circuitId !== undefined ? Prisma.sql`, circuits` : Prisma.empty}
             ${constructorId !== undefined ? Prisma.sql`, constructors` : Prisma.empty}
 
             WHERE TRUE 
 
             ${(() => {
-                if (driverStandings !== undefined || constructorStandings !== undefined) {
+                if (driverStandings !== undefined) {
                     return Prisma.sql`
                         ${
                             year !== undefined || constructorId !== undefined
@@ -81,16 +75,6 @@ export class DriversService {
                         }
                         AND driverStandings.raceId=races.raceId
                         AND drivers.driverId=driverStandings.driverId
-                        ${
-                            constructorStandings !== undefined
-                                ? Prisma.sql`AND constructorStandings.raceId=races.raceId AND constructorStandings.positionText=${constructorStandings}`
-                                : Prisma.empty
-                        }
-                        ${
-                            constructorId !== undefined && constructorStandings !== undefined
-                                ? Prisma.sql`AND constructors.constructorId=constructorStandings.constructorId`
-                                : Prisma.empty
-                        }
                     `;
                 } else {
                     return Prisma.sql`
@@ -134,7 +118,7 @@ export class DriversService {
                 if (round !== undefined) {
                     return Prisma.sql`AND races.round=${round}`;
                 } else {
-                    if (driverStandings || constructorStandings) {
+                    if (driverStandings) {
                         if (year) {
                             return Prisma.sql`AND races.round=(SELECT MAX(round) FROM races WHERE races.year=${year})`;
                         } else {
