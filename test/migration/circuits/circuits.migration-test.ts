@@ -23,6 +23,10 @@ describe("GET /circuits smoke tests", () => {
             legacyRoute: "drivers/alonso/constructors/minardi",
         },
         {
+            queryParams: { year: 2022 },
+            legacyRoute: "2022",
+        },
+        {
             queryParams: { driverId: "hamilton", year: 2022 },
             legacyRoute: "2022/drivers/hamilton",
         },
