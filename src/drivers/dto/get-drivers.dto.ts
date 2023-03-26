@@ -52,10 +52,4 @@ export class GetDriversDto extends CommonDto {
     @IsInt()
     @IsPositive()
     driverStandings: number;
-
-    @Type(() => Number)
-    @IsOptional()
-    @IsInt()
-    @IsPositive()
-    constructorStandings: number;
 }
