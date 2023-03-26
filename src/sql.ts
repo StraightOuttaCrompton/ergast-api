@@ -2,6 +2,7 @@ import { Prisma } from "@prisma/client";
 
 export function oneOf({
     year,
+    round,
     driverId,
     constructorId,
     circuitId,
@@ -9,9 +10,11 @@ export function oneOf({
     grid,
     fastest,
     result,
+    driverStandings,
     constructorStandings,
 }: {
     year?: number;
+    round?: number;
     driverId?: string;
     constructorId?: string;
     circuitId?: string;
@@ -19,10 +22,12 @@ export function oneOf({
     grid?: number;
     fastest?: number;
     result?: number;
+    driverStandings?: number;
     constructorStandings?: number;
 }) {
     return (
         year !== undefined ||
+        round !== undefined ||
         driverId !== undefined ||
         constructorId !== undefined ||
         circuitId !== undefined ||
@@ -30,6 +35,7 @@ export function oneOf({
         grid !== undefined ||
         fastest !== undefined ||
         result !== undefined ||
+        driverStandings !== undefined ||
         constructorStandings !== undefined
     );
 }
@@ -39,7 +45,7 @@ export function oneOf({
  */
 
 function appendRacesTable(params: {
-    year: number | undefined;
+    year?: number;
     circuitId?: string;
     driverId?: string;
     constructorId?: string;
