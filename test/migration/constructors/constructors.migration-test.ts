@@ -1,5 +1,5 @@
 import querystring from "querystring";
-import { GetConstructorsDto } from "src/constructors/dto/get-constructors.dto";
+import { GetConstructorsDto } from "src/routes/constructors/dto/get-constructors.dto";
 import { getMigrationTest } from "../migrationUtils";
 
 describe("GET /constructors/${constructorId} smoke tests", () => {

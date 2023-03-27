@@ -15,6 +15,4 @@ export class SeasonsController {
     findOne(@Param("id") id: number) {
         return this.seasonsService.getSeason(id);
     }
-
-    // TODO: add seasons/current route?
 }
