@@ -4,7 +4,7 @@ import * as sql from "../../sql";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
-import Constructor from "./types/Constructor";
+import formatConstructor from "../../formatters/formatConstructor";
 
 @Injectable()
 export class ConstructorsService {
@@ -102,7 +102,7 @@ export class ConstructorsService {
             ORDER BY constructors.name LIMIT ${offset}, ${limit}
         `) as constructors[];
 
-        return constructors.map(this.formatConstructor);
+        return constructors.map(formatConstructor);
     }
 
     async getConstructor(constructorRef: string) {
@@ -110,15 +110,6 @@ export class ConstructorsService {
             where: { constructorRef },
         });
 
-        return this.formatConstructor(constructor);
-    }
-
-    private formatConstructor(constructor: constructors): Constructor {
-        return {
-            constructorId: constructor.constructorRef,
-            url: constructor.url,
-            name: constructor.name,
-            nationality: constructor.nationality,
-        };
+        return formatConstructor(constructor);
     }
 }

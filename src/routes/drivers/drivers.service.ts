@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { drivers, Prisma } from "@prisma/client";
+import formatDriver from "../../formatters/formatDriver";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetDriversDto } from "./dto/get-drivers.dto";
-import Driver from "./types/Driver";
 
 @Injectable()
 export class DriversService {
@@ -131,7 +131,7 @@ export class DriversService {
             ORDER BY drivers.surname, drivers.forename LIMIT ${offset}, ${limit}
         `) as drivers[];
 
-        return drivers.map(this.formatDriver);
+        return drivers.map(formatDriver);
     }
 
     async getDriver(driverRef: string) {
@@ -139,19 +139,6 @@ export class DriversService {
             where: { driverRef },
         });
 
-        return this.formatDriver(driver);
-    }
-
-    private formatDriver(driver: drivers): Driver {
-        return {
-            driverId: driver.driverRef,
-            permanentNumber: driver.number?.toString(),
-            ...(driver.code ? { code: driver.code } : {}),
-            url: driver.url,
-            givenName: driver.forename,
-            familyName: driver.surname,
-            dateOfBirth: driver.dob?.toISOString().slice(0, 10), // TODO: change format, return date?
-            nationality: driver.nationality,
-        };
+        return formatDriver(driver);
     }
 }

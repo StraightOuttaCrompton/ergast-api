@@ -4,7 +4,7 @@ import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import * as sql from "../../sql";
 import { PrismaService } from "../../prisma.service";
 import { GetSeasonsDto } from "./dto/get-seasons.dto";
-import Season from "./types/Season";
+import formatSeason from "../../formatters/formatSeason";
 
 // TODO: doesn't work for driverId, combined with constructorStandings
 
@@ -132,7 +132,7 @@ export class SeasonsService {
             ORDER BY seasons.year LIMIT ${offset}, ${limit}
         `) as seasons[];
 
-        return seasons.map(this.formatSeason);
+        return seasons.map(formatSeason);
     }
 
     async getSeason(year: number) {
@@ -140,13 +140,6 @@ export class SeasonsService {
             where: { year },
         });
 
-        return this.formatSeason(circuit);
-    }
-
-    private formatSeason(season: seasons): Season {
-        return {
-            season: season.year.toString(),
-            url: season.url,
-        };
+        return formatSeason(circuit);
     }
 }
