@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { seasons, Prisma } from "@prisma/client";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../consts";
-import * as sql from "../sql";
-import { PrismaService } from "../prisma.service";
+import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
+import * as sql from "../../sql";
+import { PrismaService } from "../../prisma.service";
 import { GetSeasonsDto } from "./dto/get-seasons.dto";
 import Season from "./types/Season";
 

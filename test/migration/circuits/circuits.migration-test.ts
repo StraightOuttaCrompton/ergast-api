@@ -1,5 +1,5 @@
 import querystring from "querystring";
-import { GetCircuitsDto } from "../../../src/circuits/dto/get-circuits.dto";
+import { GetCircuitsDto } from "../../../src/routes/circuits/dto/get-circuits.dto";
 import { getMigrationTest } from "../migrationUtils";
 
 describe("GET /circuits/${circuitId} smoke tests", () => {

@@ -1,6 +1,6 @@
 import querystring from "querystring";
 import request from "supertest";
-import { GetSeasonsDto } from "../../../src/seasons/dto/get-seasons.dto";
+import { GetSeasonsDto } from "../../../src/routes/seasons/dto/get-seasons.dto";
 import { getMigrationTest } from "../migrationUtils";
 import { app } from "../setup";
 

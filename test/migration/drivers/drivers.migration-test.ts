@@ -1,6 +1,6 @@
 import querystring from "querystring";
 import { getMigrationTest } from "../migrationUtils";
-import { GetDriversDto } from "../../../src/drivers/dto/get-drivers.dto";
+import { GetDriversDto } from "../../../src/routes/drivers/dto/get-drivers.dto";
 
 describe("GET /drivers/${driverId} smoke tests", () => {
     const migrationTest = getMigrationTest((response) => response.MRData.DriverTable.Drivers[0]);

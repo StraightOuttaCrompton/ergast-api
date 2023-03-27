@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { circuits } from "@prisma/client";
-import * as sql from "../sql";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../consts";
-import { PrismaService } from "../prisma.service";
+import * as sql from "../../sql";
+import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
+import { PrismaService } from "../../prisma.service";
 import { GetCircuitsDto } from "./dto/get-circuits.dto";
 import Circuit from "./types/Circuit";
 

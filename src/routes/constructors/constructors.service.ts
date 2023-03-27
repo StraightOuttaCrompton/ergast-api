@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { constructors, Prisma } from "@prisma/client";
-import * as sql from "../sql";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../consts";
-import { PrismaService } from "../prisma.service";
+import * as sql from "../../sql";
+import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
+import { PrismaService } from "../../prisma.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
 import Constructor from "./types/Constructor";
 

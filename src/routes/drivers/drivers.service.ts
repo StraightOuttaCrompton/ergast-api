@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { drivers, Prisma } from "@prisma/client";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../consts";
-import { PrismaService } from "../prisma.service";
+import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
+import { PrismaService } from "../../prisma.service";
 import { GetDriversDto } from "./dto/get-drivers.dto";
 import Driver from "./types/Driver";
 

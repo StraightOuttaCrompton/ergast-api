@@ -1,15 +1,15 @@
 import { Type } from "class-transformer";
 import { IsInt, IsNotEmpty, IsOptional, IsPositive } from "class-validator";
-import { CommonDto } from "../../common.dto";
+import { CommonDto } from "../../../common.dto";
 
-export class GetConstructorsDto extends CommonDto {
+export class GetDriversDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
     circuitId: string;
 
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    constructorId: string;
 
     @Type(() => Number)
     @IsOptional()
@@ -51,5 +51,5 @@ export class GetConstructorsDto extends CommonDto {
     @IsOptional()
     @IsInt()
     @IsPositive()
-    constructorStandings: number;
+    driverStandings: number;
 }
