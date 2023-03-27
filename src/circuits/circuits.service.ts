@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { circuits, Prisma } from "@prisma/client";
+import { circuits } from "@prisma/client";
+import * as sql from "../sql";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../consts";
 import { PrismaService } from "../prisma.service";
 import { GetCircuitsDto } from "./dto/get-circuits.dto";
@@ -24,68 +25,54 @@ export class CircuitsService {
         const circuits = (await this.prisma.$queryRaw`
             SELECT DISTINCT circuits.circuitRef, circuits.name, circuits.location, circuits.country, circuits.lat, circuits.lng, circuits.alt, circuits.url 
             FROM circuits 
-            ${
-                year !== undefined ||
-                driverId !== undefined ||
-                constructorId !== undefined ||
-                status !== undefined ||
-                grid !== undefined ||
-                fastest !== undefined ||
-                result !== undefined
-                    ? Prisma.sql`, races`
-                    : Prisma.empty
-            }
-            ${
-                driverId !== undefined ||
-                constructorId !== undefined ||
-                status !== undefined ||
-                grid !== undefined ||
-                fastest !== undefined ||
-                result !== undefined
-                    ? Prisma.sql`, results`
-                    : Prisma.empty
-            }
-            ${driverId !== undefined ? Prisma.sql`, drivers` : Prisma.empty}
-            ${constructorId !== undefined ? Prisma.sql`, constructors` : Prisma.empty}
+
+            ${sql.tables.races({
+                year,
+                driverId,
+                constructorId,
+                status,
+                grid,
+                fastest,
+                result,
+            })}
+            ${sql.tables.results({
+                driverId,
+                constructorId,
+                status,
+                grid,
+                fastest,
+                result,
+            })}
+            ${sql.tables.drivers({ driverId })}
+            ${sql.tables.constructors({ constructorId })}
 
             WHERE TRUE 
-            ${
-                year !== undefined ||
-                driverId !== undefined ||
-                constructorId !== undefined ||
-                status !== undefined ||
-                grid !== undefined ||
-                fastest !== undefined ||
-                result !== undefined
-                    ? Prisma.sql`AND races.circuitId=circuits.circuitId`
-                    : Prisma.empty
-            }
-            ${
-                driverId !== undefined ||
-                constructorId !== undefined ||
-                status !== undefined ||
-                grid !== undefined ||
-                fastest !== undefined ||
-                result !== undefined
-                    ? Prisma.sql`AND results.raceId=races.raceId`
-                    : Prisma.empty
-            }
-            ${
-                constructorId !== undefined
-                    ? Prisma.sql`AND results.constructorId=constructors.constructorId AND constructors.constructorRef=${constructorId}`
-                    : Prisma.empty
-            }
-            ${
-                driverId !== undefined
-                    ? Prisma.sql`AND results.driverId=drivers.driverId AND drivers.driverRef=${driverId}`
-                    : Prisma.empty
-            }
-            ${status !== undefined ? Prisma.sql`AND results.statusId=${status}` : Prisma.empty}
-            ${grid !== undefined ? Prisma.sql`AND results.grid=${grid}` : Prisma.empty}
-            ${fastest !== undefined ? Prisma.sql`AND results.rank=${fastest}` : Prisma.empty}
-            ${result !== undefined ? Prisma.sql`AND results.positionText=${result}` : Prisma.empty}
-            ${round !== undefined ? Prisma.sql`AND races.round=${round}` : Prisma.empty}
-            ${year !== undefined ? Prisma.sql`AND races.year=${year}` : Prisma.empty}
+            ${sql.and.circuits({
+                year,
+                driverId,
+                constructorId,
+                status,
+                grid,
+                fastest,
+                result,
+            })}
+            ${sql.and.races({
+                driverId,
+                constructorId,
+                status,
+                grid,
+                fastest,
+                result,
+            })}
+            ${sql.and.constructors({ constructorId })}
+            ${sql.and.drivers({ driverId })}
+            ${sql.and.status({ status })}
+            ${sql.and.grid({ grid })}
+            ${sql.and.fastest({ fastest })}
+            ${sql.and.result({ result })}
+            ${sql.and.round({ round })}
+            ${sql.and.year({ year })}
+
             ORDER BY circuits.circuitRef LIMIT ${offset}, ${limit}
         `) as circuits[];
 

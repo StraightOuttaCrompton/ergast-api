@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { constructors, Prisma } from "@prisma/client";
+import * as sql from "../sql";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../consts";
 import { PrismaService } from "../prisma.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
@@ -32,58 +33,39 @@ export class ConstructorsService {
         const constructors = (await this.prisma.$queryRaw`
             SELECT DISTINCT constructors.* 
             FROM constructors
-            ${
-                year !== undefined || circuitId !== undefined || constructorStandings !== undefined
-                    ? Prisma.sql`, races`
-                    : Prisma.empty
-            }
-            ${
-                year !== undefined ||
-                driverId !== undefined ||
-                status !== undefined ||
-                grid !== undefined ||
-                result !== undefined ||
-                circuitId !== undefined ||
-                fastest !== undefined
-                    ? Prisma.sql`, results`
-                    : Prisma.empty
-            }
-            ${constructorStandings !== undefined ? Prisma.sql`, constructorStandings` : Prisma.empty}
-            ${circuitId !== undefined ? Prisma.sql`, circuits` : Prisma.empty}
-            ${driverId !== undefined ? Prisma.sql`, drivers` : Prisma.empty}
+            ${sql.tables.races({ year, circuitId, constructorStandings })}
+            ${sql.tables.results({ year, driverId, circuitId, status, grid, result, fastest })}
+
+            ${sql.tables.drivers({ driverId })}
+            ${sql.tables.circuits({ circuitId })}
+            ${sql.tables.constructorStandings({ constructorStandings })}
 
             WHERE TRUE 
 
             ${
-                year !== undefined ||
-                driverId !== undefined ||
-                status !== undefined ||
-                grid !== undefined ||
-                result !== undefined ||
-                circuitId !== undefined ||
-                fastest !== undefined
+                sql.oneOf({
+                    year,
+                    driverId,
+                    status,
+                    grid,
+                    result,
+                    circuitId,
+                    fastest,
+                })
                     ? Prisma.sql`AND constructors.constructorId = results.constructorId`
                     : Prisma.empty
             }
-            ${
-                year !== undefined || circuitId !== undefined
-                    ? Prisma.sql`AND results.raceId=races.raceId`
-                    : Prisma.empty
-            }
+            ${sql.oneOf({ year, circuitId }) ? Prisma.sql`AND results.raceId=races.raceId` : Prisma.empty}
             ${
                 circuitId !== undefined
                     ? Prisma.sql`AND races.circuitId=circuits.circuitId AND circuits.circuitRef=${circuitId}`
                     : Prisma.empty
             }
-            ${
-                driverId !== undefined
-                    ? Prisma.sql`AND results.driverId=drivers.driverId AND drivers.driverRef=${driverId}`
-                    : Prisma.empty
-            }
-            ${status !== undefined ? Prisma.sql`AND results.statusId=${status}` : Prisma.empty}
-            ${grid !== undefined ? Prisma.sql`AND results.grid=${grid}` : Prisma.empty}
-            ${fastest !== undefined ? Prisma.sql`AND results.rank=${fastest}` : Prisma.empty}
-            ${result !== undefined ? Prisma.sql`AND results.positionText=${result}` : Prisma.empty}
+            ${sql.and.drivers({ driverId })}
+            ${sql.and.status({ status })}
+            ${sql.and.grid({ grid })}
+            ${sql.and.fastest({ fastest })}
+            ${sql.and.result({ result })}
 
             ${
                 constructorStandings !== undefined && driverId !== undefined
@@ -101,8 +83,7 @@ export class ConstructorsService {
                     ? Prisma.sql`AND driverStandings.constructorId=constructorStandings.constructorId`
                     : Prisma.empty
             }
-            ${year !== undefined ? Prisma.sql`AND races.year=${year}` : Prisma.empty}
-
+            ${sql.and.year({ year })}
 
             ${(() => {
                 if (round !== undefined) {
