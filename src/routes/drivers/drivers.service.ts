@@ -1,9 +1,10 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { drivers, Prisma } from "@prisma/client";
 import formatDriver from "../../formatters/formatDriver";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetDriversDto } from "./dto/get-drivers.dto";
+import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
 
 @Injectable()
 export class DriversService {
@@ -23,10 +24,7 @@ export class DriversService {
         driverStandings,
     }: GetDriversDto) {
         if (driverStandings && (circuitId || grid || result || status)) {
-            throw new HttpException(
-                "Cannot combine standings with circuit, grid, result or status qualifiers.",
-                HttpStatus.BAD_REQUEST
-            );
+            throw new StandingParameterCombinationException();
         }
 
         const drivers = (await this.prisma.$queryRaw`

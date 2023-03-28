@@ -1,10 +1,11 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { seasons, Prisma } from "@prisma/client";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import * as sql from "../../sql";
 import { PrismaService } from "../../prisma.service";
 import { GetSeasonsDto } from "./dto/get-seasons.dto";
 import formatSeason from "../../formatters/formatSeason";
+import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
 
 // TODO: doesn't work for driverId, combined with constructorStandings
 
@@ -26,10 +27,7 @@ export class SeasonsService {
         constructorStandings,
     }: GetSeasonsDto) {
         if ((driverStandings || constructorStandings) && (circuitId || grid || result || status)) {
-            throw new HttpException(
-                "Cannot combine standings with circuit, grid, result or status qualifiers.",
-                HttpStatus.BAD_REQUEST
-            );
+            throw new StandingParameterCombinationException();
         }
 
         const seasons = (await this.prisma.$queryRaw`
