@@ -56,7 +56,7 @@ describe("GET /seasons smoke tests", () => {
         },
     ];
 
-    // migrationTest(endpoint, `https://ergast.com/api/f1/seasons.json`);
+    migrationTest(endpoint, `https://ergast.com/api/f1/seasons.json`);
 
     queries.forEach(({ queryParams, legacyRoute }) => {
         migrationTest(
