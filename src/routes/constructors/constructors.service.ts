@@ -1,10 +1,11 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { constructors, Prisma } from "@prisma/client";
 import * as sql from "../../sql";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
 import formatConstructor from "../../formatters/formatConstructor";
+import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
 
 @Injectable()
 export class ConstructorsService {
@@ -24,10 +25,7 @@ export class ConstructorsService {
         constructorStandings,
     }: GetConstructorsDto) {
         if (constructorStandings && (circuitId || grid || result || status)) {
-            throw new HttpException(
-                "Cannot combine standings with circuit, grid, result or status qualifiers.",
-                HttpStatus.BAD_REQUEST
-            );
+            throw new StandingParameterCombinationException();
         }
 
         const constructors = (await this.prisma.$queryRaw`
