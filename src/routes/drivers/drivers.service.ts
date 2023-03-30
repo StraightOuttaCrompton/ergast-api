@@ -28,7 +28,7 @@ export class DriversService {
         }
 
         const drivers = (await this.prisma.$queryRaw`
-            SELECT DISTINCT drivers.*,DATE_FORMAT(dob, '%Y-%m-%d') AS 'date' 
+            SELECT DISTINCT drivers.*
             FROM drivers
             ${
                 year !== undefined || circuitId !== undefined || driverStandings !== undefined
