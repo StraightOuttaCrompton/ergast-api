@@ -1,4 +1,5 @@
 import { drivers } from "@prisma/client";
+import { formatDate } from "../utils";
 import Driver from "../types/Driver";
 
 export default function formatDriver(driver: drivers): Driver {
@@ -9,7 +10,7 @@ export default function formatDriver(driver: drivers): Driver {
         url: driver.url,
         givenName: driver.forename,
         familyName: driver.surname,
-        dateOfBirth: driver.dob?.toISOString().slice(0, 10), // TODO: change format, return date?
+        dateOfBirth: driver.dob !== undefined ? formatDate(driver.dob) : undefined, // TODO: change format, return date?
         nationality: driver.nationality,
     };
 }
