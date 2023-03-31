@@ -5,7 +5,7 @@ export interface DriverStandings {
     positionText: string; // TODO: number
     points: string; // TODO: number
     wins: string; // TODO: number
-    Driver: Driver;
+    Driver: Driver; // TODO: driver
 }
 
 export interface DriverStandingsResponse {
