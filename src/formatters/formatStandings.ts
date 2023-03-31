@@ -2,7 +2,7 @@ import { drivers, driverStandings } from "@prisma/client";
 import { DriverStandings, DriverStandingsResponse } from "src/types/DriverStandings";
 import formatDriver from "./formatDriver";
 
-export function formatDriverStandings(response: driverStandings & drivers): DriverStandings {
+function formatDriverStandings(response: driverStandings & drivers): DriverStandings {
     return {
         position: response.position.toString(),
         positionText: response.positionText.toString(),
