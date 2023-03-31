@@ -8,6 +8,7 @@ import { DriversModule } from "./routes/drivers/drivers.module";
 import { DriverStandingsModule } from "./routes/driverStandings/driverStandings.module";
 import { RacesModule } from "./routes/races/races.module";
 import { SeasonsModule } from "./routes/seasons/seasons.module";
+import { StatusModule } from "./routes/status/status.module";
 
 @Module({
     imports: [
@@ -18,6 +19,7 @@ import { SeasonsModule } from "./routes/seasons/seasons.module";
         ConstructorStandingsModule,
         RacesModule,
         SeasonsModule,
+        StatusModule,
     ],
     controllers: [AppController],
     providers: [AppService],

@@ -1,0 +1,849 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /status smoke tests /status 1`] = `
+[
+  {
+    "count": "7111",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "143",
+    "status": "Disqualified",
+    "statusId": "2",
+  },
+  {
+    "count": "1044",
+    "status": "Accident",
+    "statusId": "3",
+  },
+  {
+    "count": "833",
+    "status": "Collision",
+    "statusId": "4",
+  },
+  {
+    "count": "2013",
+    "status": "Engine",
+    "statusId": "5",
+  },
+  {
+    "count": "805",
+    "status": "Gearbox",
+    "statusId": "6",
+  },
+  {
+    "count": "321",
+    "status": "Transmission",
+    "statusId": "7",
+  },
+  {
+    "count": "214",
+    "status": "Clutch",
+    "statusId": "8",
+  },
+  {
+    "count": "138",
+    "status": "Hydraulics",
+    "statusId": "9",
+  },
+  {
+    "count": "316",
+    "status": "Electrical",
+    "statusId": "10",
+  },
+  {
+    "count": "3856",
+    "status": "+1 Lap",
+    "statusId": "11",
+  },
+  {
+    "count": "1594",
+    "status": "+2 Laps",
+    "statusId": "12",
+  },
+  {
+    "count": "731",
+    "status": "+3 Laps",
+    "statusId": "13",
+  },
+  {
+    "count": "405",
+    "status": "+4 Laps",
+    "statusId": "14",
+  },
+  {
+    "count": "221",
+    "status": "+5 Laps",
+    "statusId": "15",
+  },
+  {
+    "count": "153",
+    "status": "+6 Laps",
+    "statusId": "16",
+  },
+  {
+    "count": "99",
+    "status": "+7 Laps",
+    "statusId": "17",
+  },
+  {
+    "count": "52",
+    "status": "+8 Laps",
+    "statusId": "18",
+  },
+  {
+    "count": "38",
+    "status": "+9 Laps",
+    "statusId": "19",
+  },
+  {
+    "count": "792",
+    "status": "Spun off",
+    "statusId": "20",
+  },
+  {
+    "count": "42",
+    "status": "Radiator",
+    "statusId": "21",
+  },
+  {
+    "count": "431",
+    "status": "Suspension",
+    "statusId": "22",
+  },
+  {
+    "count": "251",
+    "status": "Brakes",
+    "statusId": "23",
+  },
+  {
+    "count": "61",
+    "status": "Differential",
+    "statusId": "24",
+  },
+  {
+    "count": "130",
+    "status": "Overheating",
+    "statusId": "25",
+  },
+  {
+    "count": "29",
+    "status": "Mechanical",
+    "statusId": "26",
+  },
+  {
+    "count": "55",
+    "status": "Tyre",
+    "statusId": "27",
+  },
+  {
+    "count": "1",
+    "status": "Driver Seat",
+    "statusId": "28",
+  },
+  {
+    "count": "41",
+    "status": "Puncture",
+    "statusId": "29",
+  },
+  {
+    "count": "25",
+    "status": "Driveshaft",
+    "statusId": "30",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=albert_park&result=2&year=2022 1`] = `
+[
+  {
+    "count": "1",
+    "status": "Finished",
+    "statusId": "1",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=americas&grid=1&year=2022 1`] = `
+[
+  {
+    "count": "1",
+    "status": "Collision damage",
+    "statusId": "130",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=bahrain&fastest=1&year=2022 1`] = `
+[
+  {
+    "count": "1",
+    "status": "Finished",
+    "statusId": "1",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=brands_hatch&constructorId=minardi 1`] = `
+[
+  {
+    "count": "1",
+    "status": "Accident",
+    "statusId": "3",
+  },
+  {
+    "count": "1",
+    "status": "Electrical",
+    "statusId": "10",
+  },
+  {
+    "count": "1",
+    "status": "Steering",
+    "statusId": "38",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=catalunya&year=2022 1`] = `
+[
+  {
+    "count": "8",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "7",
+    "status": "+1 Lap",
+    "statusId": "11",
+  },
+  {
+    "count": "3",
+    "status": "+2 Laps",
+    "statusId": "12",
+  },
+  {
+    "count": "1",
+    "status": "Power loss",
+    "statusId": "75",
+  },
+  {
+    "count": "1",
+    "status": "Turbo",
+    "statusId": "101",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=interlagos&constructorId=ferrari&result=1 1`] = `
+[
+  {
+    "count": "9",
+    "status": "Finished",
+    "statusId": "1",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?circuitId=monza 1`] = `
+[
+  {
+    "count": "481",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "3",
+    "status": "Disqualified",
+    "statusId": "2",
+  },
+  {
+    "count": "52",
+    "status": "Accident",
+    "statusId": "3",
+  },
+  {
+    "count": "40",
+    "status": "Collision",
+    "statusId": "4",
+  },
+  {
+    "count": "218",
+    "status": "Engine",
+    "statusId": "5",
+  },
+  {
+    "count": "56",
+    "status": "Gearbox",
+    "statusId": "6",
+  },
+  {
+    "count": "19",
+    "status": "Transmission",
+    "statusId": "7",
+  },
+  {
+    "count": "21",
+    "status": "Clutch",
+    "statusId": "8",
+  },
+  {
+    "count": "5",
+    "status": "Hydraulics",
+    "statusId": "9",
+  },
+  {
+    "count": "19",
+    "status": "Electrical",
+    "statusId": "10",
+  },
+  {
+    "count": "227",
+    "status": "+1 Lap",
+    "statusId": "11",
+  },
+  {
+    "count": "96",
+    "status": "+2 Laps",
+    "statusId": "12",
+  },
+  {
+    "count": "38",
+    "status": "+3 Laps",
+    "statusId": "13",
+  },
+  {
+    "count": "25",
+    "status": "+4 Laps",
+    "statusId": "14",
+  },
+  {
+    "count": "23",
+    "status": "+5 Laps",
+    "statusId": "15",
+  },
+  {
+    "count": "14",
+    "status": "+6 Laps",
+    "statusId": "16",
+  },
+  {
+    "count": "6",
+    "status": "+7 Laps",
+    "statusId": "17",
+  },
+  {
+    "count": "9",
+    "status": "+8 Laps",
+    "statusId": "18",
+  },
+  {
+    "count": "7",
+    "status": "+9 Laps",
+    "statusId": "19",
+  },
+  {
+    "count": "52",
+    "status": "Spun off",
+    "statusId": "20",
+  },
+  {
+    "count": "3",
+    "status": "Radiator",
+    "statusId": "21",
+  },
+  {
+    "count": "39",
+    "status": "Suspension",
+    "statusId": "22",
+  },
+  {
+    "count": "14",
+    "status": "Brakes",
+    "statusId": "23",
+  },
+  {
+    "count": "1",
+    "status": "Differential",
+    "statusId": "24",
+  },
+  {
+    "count": "13",
+    "status": "Overheating",
+    "statusId": "25",
+  },
+  {
+    "count": "4",
+    "status": "Tyre",
+    "statusId": "27",
+  },
+  {
+    "count": "7",
+    "status": "Puncture",
+    "statusId": "29",
+  },
+  {
+    "count": "1",
+    "status": "Driveshaft",
+    "statusId": "30",
+  },
+  {
+    "count": "4",
+    "status": "Retired",
+    "statusId": "31",
+  },
+  {
+    "count": "3",
+    "status": "Fuel pressure",
+    "statusId": "32",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?constructorId=renault 1`] = `
+[
+  {
+    "count": "316",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "3",
+    "status": "Disqualified",
+    "statusId": "2",
+  },
+  {
+    "count": "27",
+    "status": "Accident",
+    "statusId": "3",
+  },
+  {
+    "count": "30",
+    "status": "Collision",
+    "statusId": "4",
+  },
+  {
+    "count": "52",
+    "status": "Engine",
+    "statusId": "5",
+  },
+  {
+    "count": "20",
+    "status": "Gearbox",
+    "statusId": "6",
+  },
+  {
+    "count": "9",
+    "status": "Transmission",
+    "statusId": "7",
+  },
+  {
+    "count": "5",
+    "status": "Clutch",
+    "statusId": "8",
+  },
+  {
+    "count": "6",
+    "status": "Hydraulics",
+    "statusId": "9",
+  },
+  {
+    "count": "3",
+    "status": "Electrical",
+    "statusId": "10",
+  },
+  {
+    "count": "167",
+    "status": "+1 Lap",
+    "statusId": "11",
+  },
+  {
+    "count": "15",
+    "status": "+2 Laps",
+    "statusId": "12",
+  },
+  {
+    "count": "4",
+    "status": "+3 Laps",
+    "statusId": "13",
+  },
+  {
+    "count": "3",
+    "status": "+4 Laps",
+    "statusId": "14",
+  },
+  {
+    "count": "1",
+    "status": "+5 Laps",
+    "statusId": "15",
+  },
+  {
+    "count": "1",
+    "status": "+8 Laps",
+    "statusId": "18",
+  },
+  {
+    "count": "1",
+    "status": "+9 Laps",
+    "statusId": "19",
+  },
+  {
+    "count": "27",
+    "status": "Spun off",
+    "statusId": "20",
+  },
+  {
+    "count": "11",
+    "status": "Suspension",
+    "statusId": "22",
+  },
+  {
+    "count": "9",
+    "status": "Brakes",
+    "statusId": "23",
+  },
+  {
+    "count": "5",
+    "status": "Overheating",
+    "statusId": "25",
+  },
+  {
+    "count": "1",
+    "status": "Mechanical",
+    "statusId": "26",
+  },
+  {
+    "count": "3",
+    "status": "Tyre",
+    "statusId": "27",
+  },
+  {
+    "count": "1",
+    "status": "Puncture",
+    "statusId": "29",
+  },
+  {
+    "count": "3",
+    "status": "Driveshaft",
+    "statusId": "30",
+  },
+  {
+    "count": "4",
+    "status": "Retired",
+    "statusId": "31",
+  },
+  {
+    "count": "2",
+    "status": "Fuel pressure",
+    "statusId": "32",
+  },
+  {
+    "count": "1",
+    "status": "Front wing",
+    "statusId": "33",
+  },
+  {
+    "count": "4",
+    "status": "Wheel",
+    "statusId": "36",
+  },
+  {
+    "count": "1",
+    "status": "Throttle",
+    "statusId": "37",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?driverId=hamilton 1`] = `
+[
+  {
+    "count": "272",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "1",
+    "status": "Disqualified",
+    "statusId": "2",
+  },
+  {
+    "count": "1",
+    "status": "Accident",
+    "statusId": "3",
+  },
+  {
+    "count": "11",
+    "status": "Collision",
+    "statusId": "4",
+  },
+  {
+    "count": "2",
+    "status": "Engine",
+    "statusId": "5",
+  },
+  {
+    "count": "3",
+    "status": "Gearbox",
+    "statusId": "6",
+  },
+  {
+    "count": "1",
+    "status": "Hydraulics",
+    "statusId": "9",
+  },
+  {
+    "count": "1",
+    "status": "Electrical",
+    "statusId": "10",
+  },
+  {
+    "count": "10",
+    "status": "+1 Lap",
+    "statusId": "11",
+  },
+  {
+    "count": "1",
+    "status": "Spun off",
+    "statusId": "20",
+  },
+  {
+    "count": "2",
+    "status": "Brakes",
+    "statusId": "23",
+  },
+  {
+    "count": "3",
+    "status": "Puncture",
+    "statusId": "29",
+  },
+  {
+    "count": "1",
+    "status": "Retired",
+    "statusId": "31",
+  },
+  {
+    "count": "1",
+    "status": "Fuel pressure",
+    "statusId": "32",
+  },
+  {
+    "count": "1",
+    "status": "Throttle",
+    "statusId": "37",
+  },
+  {
+    "count": "1",
+    "status": "Collision damage",
+    "statusId": "130",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?year=2010&round=2 1`] = `
+[
+  {
+    "count": "12",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "3",
+    "status": "Collision",
+    "statusId": "4",
+  },
+  {
+    "count": "1",
+    "status": "Engine",
+    "statusId": "5",
+  },
+  {
+    "count": "3",
+    "status": "Hydraulics",
+    "statusId": "9",
+  },
+  {
+    "count": "1",
+    "status": "+2 Laps",
+    "statusId": "12",
+  },
+  {
+    "count": "1",
+    "status": "+5 Laps",
+    "statusId": "15",
+  },
+  {
+    "count": "1",
+    "status": "Spun off",
+    "statusId": "20",
+  },
+  {
+    "count": "1",
+    "status": "Suspension",
+    "statusId": "22",
+  },
+  {
+    "count": "1",
+    "status": "Wheel",
+    "statusId": "36",
+  },
+]
+`;
+
+exports[`GET /status smoke tests /status?year=2022 1`] = `
+[
+  {
+    "count": "279",
+    "status": "Finished",
+    "statusId": "1",
+  },
+  {
+    "count": "8",
+    "status": "Accident",
+    "statusId": "3",
+  },
+  {
+    "count": "10",
+    "status": "Collision",
+    "statusId": "4",
+  },
+  {
+    "count": "7",
+    "status": "Engine",
+    "statusId": "5",
+  },
+  {
+    "count": "4",
+    "status": "Gearbox",
+    "statusId": "6",
+  },
+  {
+    "count": "4",
+    "status": "Hydraulics",
+    "statusId": "9",
+  },
+  {
+    "count": "80",
+    "status": "+1 Lap",
+    "statusId": "11",
+  },
+  {
+    "count": "6",
+    "status": "+2 Laps",
+    "statusId": "12",
+  },
+  {
+    "count": "1",
+    "status": "+6 Laps",
+    "statusId": "16",
+  },
+  {
+    "count": "2",
+    "status": "Spun off",
+    "statusId": "20",
+  },
+  {
+    "count": "1",
+    "status": "Suspension",
+    "statusId": "22",
+  },
+  {
+    "count": "1",
+    "status": "Differential",
+    "statusId": "24",
+  },
+  {
+    "count": "1",
+    "status": "Mechanical",
+    "statusId": "26",
+  },
+  {
+    "count": "2",
+    "status": "Fuel pressure",
+    "statusId": "32",
+  },
+  {
+    "count": "1",
+    "status": "Front wing",
+    "statusId": "33",
+  },
+  {
+    "count": "2",
+    "status": "Water pressure",
+    "statusId": "34",
+  },
+  {
+    "count": "1",
+    "status": "Oil leak",
+    "statusId": "44",
+  },
+  {
+    "count": "2",
+    "status": "Water leak",
+    "statusId": "47",
+  },
+  {
+    "count": "1",
+    "status": "Fuel pump",
+    "statusId": "48",
+  },
+  {
+    "count": "1",
+    "status": "Withdrew",
+    "statusId": "54",
+  },
+  {
+    "count": "1",
+    "status": "Power loss",
+    "statusId": "75",
+  },
+  {
+    "count": "1",
+    "status": "Vibrations",
+    "statusId": "76",
+  },
+  {
+    "count": "1",
+    "status": "Fuel leak",
+    "statusId": "95",
+  },
+  {
+    "count": "1",
+    "status": "Turbo",
+    "statusId": "101",
+  },
+  {
+    "count": "1",
+    "status": "Water pump",
+    "statusId": "103",
+  },
+  {
+    "count": "12",
+    "status": "Collision damage",
+    "statusId": "130",
+  },
+  {
+    "count": "6",
+    "status": "Power Unit",
+    "statusId": "131",
+  },
+  {
+    "count": "2",
+    "status": "Undertray",
+    "statusId": "140",
+  },
+  {
+    "count": "1",
+    "status": "Cooling system",
+    "statusId": "141",
+  },
+]
+`;
+
+exports[`GET /status/\${statusId} smoke tests /status/1 1`] = `
+{
+  "count": "7111",
+  "status": "Finished",
+  "statusId": "1",
+}
+`;

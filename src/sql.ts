@@ -46,6 +46,7 @@ export function oneOf({
 
 function appendRacesTable(params: {
     year?: number;
+    round?: number;
     circuitId?: string;
     driverId?: string;
     constructorId?: string;
@@ -140,12 +141,15 @@ function andCircuits(params: {
 }
 
 function andRaces(params: {
-    driverId: string | undefined;
-    constructorId: string | undefined;
-    status: number | undefined;
-    grid: number | undefined;
-    fastest: number | undefined;
-    result: number | undefined;
+    year?: number;
+    round?: number;
+    driverId?: string;
+    constructorId?: string;
+    circuitId?: string;
+    status?: number;
+    grid?: number;
+    fastest?: number;
+    result?: number;
 }) {
     if (oneOf(params)) {
         return Prisma.sql`AND results.raceId=races.raceId`;
