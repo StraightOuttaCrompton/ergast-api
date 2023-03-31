@@ -1,5 +1,5 @@
 import { drivers, driverStandings } from "@prisma/client";
-import { DriverStandings, DriverStandingsResponse } from "src/types/DriverStandings";
+import { DriverStandings, DriverStandingsResponse } from "../types/DriverStandings";
 import formatDriver from "./formatDriver";
 
 function formatDriverStandings(response: driverStandings & drivers): DriverStandings {
@@ -15,26 +15,39 @@ function formatDriverStandings(response: driverStandings & drivers): DriverStand
 export function formatDriverStandingsResponse(
     response: (driverStandings & drivers & { year: number; round: number })[]
 ): DriverStandingsResponse[] {
-    const standingsMap: Record<string, DriverStandingsResponse> = {};
+    const standingsResponse = extractByYearAndRound(response, formatDriverStandings);
+
+    return standingsResponse.map(({ season, round, standings }) => ({
+        season,
+        round,
+        driverStandings: standings,
+    }));
+}
+
+function extractByYearAndRound<S, T>(
+    response: (S & { year: number; round: number })[],
+    formatStandings: (response: S) => T
+) {
+    const standingsMap: Record<string, { season: string; round: string; standings: T[] }> = {};
 
     for (let i = 0; i < response.length; i++) {
-        const { year, round, ...rest } = response[i];
+        const { year, round } = response[i];
 
         // Generate a unique key for this year and round
         const key = `${year}-${round}`;
 
-        const driverStandings = formatDriverStandings(rest);
+        const standings = formatStandings(response[i]);
 
         if (!standingsMap[key]) {
             // Create a new standings object if one does not exist for this season and round
             standingsMap[key] = {
                 season: year.toString(),
                 round: round.toString(),
-                driverStandings: [driverStandings],
+                standings: [standings],
             };
         } else {
             // Add the player to the existing standings object for this season and round
-            standingsMap[key].driverStandings.push(driverStandings);
+            standingsMap[key].standings.push(standings);
         }
     }
 
