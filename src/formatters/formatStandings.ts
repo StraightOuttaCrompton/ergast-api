@@ -1,5 +1,7 @@
-import { drivers, driverStandings } from "@prisma/client";
+import { constructors, constructorStandings, drivers, driverStandings } from "@prisma/client";
+import { ConstructorStandings, ConstructorStandingsResponse } from "../types/ConstructorStandings";
 import { DriverStandings, DriverStandingsResponse } from "../types/DriverStandings";
+import formatConstructor from "./formatConstructor";
 import formatDriver from "./formatDriver";
 
 function formatDriverStandings(response: driverStandings & drivers): DriverStandings {
@@ -21,6 +23,28 @@ export function formatDriverStandingsResponse(
         season,
         round,
         driverStandings: standings,
+    }));
+}
+
+function formatConstructorStandings(response: constructorStandings & constructors): ConstructorStandings {
+    return {
+        position: response.position.toString(),
+        positionText: response.positionText.toString(),
+        points: response.points.toString(),
+        wins: response.wins.toString(),
+        Constructor: formatConstructor(response),
+    };
+}
+
+export function formatConstructorStandingsResponse(
+    response: (constructorStandings & constructors & { year: number; round: number })[]
+): ConstructorStandingsResponse[] {
+    const standingsResponse = extractByYearAndRound(response, formatConstructorStandings);
+
+    return standingsResponse.map(({ season, round, standings }) => ({
+        season,
+        round,
+        constructorStandings: standings,
     }));
 }
 
