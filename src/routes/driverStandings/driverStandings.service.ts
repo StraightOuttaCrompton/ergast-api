@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { drivers, driverStandings, Prisma } from "@prisma/client";
-import { formatDriverStandingsResponse } from "../../formatters/formatDriverStandings";
+import { formatDriverStandingsResponse } from "../../formatters/formatStandings";
 import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetDriverStandingsDto } from "./dto/get-driver-standings.dto";
