@@ -9,6 +9,7 @@ import { DriverStandingsModule } from "./routes/driverStandings/driverStandings.
 import { RacesModule } from "./routes/races/races.module";
 import { SeasonsModule } from "./routes/seasons/seasons.module";
 import { StatusModule } from "./routes/status/status.module";
+import { LapsModule } from "./routes/laps/laps.module";
 
 @Module({
     imports: [
@@ -17,6 +18,7 @@ import { StatusModule } from "./routes/status/status.module";
         CircuitsModule,
         ConstructorsModule,
         ConstructorStandingsModule,
+        LapsModule,
         RacesModule,
         SeasonsModule,
         StatusModule,
