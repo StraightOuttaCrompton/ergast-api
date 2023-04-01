@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { constructors, Prisma } from "@prisma/client";
 import * as sql from "../../sql";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
 import formatConstructor from "../../formatters/formatConstructor";
@@ -12,8 +11,8 @@ export class ConstructorsService {
     constructor(private prisma: PrismaService) {}
 
     async getConstructors({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
+        limit,
+        offset,
         year,
         round,
         circuitId,

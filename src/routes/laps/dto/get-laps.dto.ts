@@ -15,5 +15,5 @@ export class GetLapsDto extends CommonDto {
 
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    driverId?: string;
 }

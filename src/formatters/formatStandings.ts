@@ -1,17 +1,17 @@
 import { constructors, constructorStandings, drivers, driverStandings } from "@prisma/client";
-import { ConstructorStandings, ConstructorStandingsResponse } from "../types/ConstructorStandings";
-import { DriverStandings, DriverStandingsResponse } from "../types/DriverStandings";
 import formatConstructor from "./formatConstructor";
 import formatDriver from "./formatDriver";
+import { ConstructorStandings, ConstructorStandingsResponse } from "../responseDtos/ConstructorStandings.dto";
+import { DriverStandings, DriverStandingsResponse } from "../responseDtos/DriverStandings.dto";
 
-function formatDriverStandings(response: driverStandings & drivers): DriverStandings {
-    return {
+function formatDriverStandings(response: driverStandings & drivers) {
+    return new DriverStandings({
         position: response.position.toString(),
         positionText: response.positionText.toString(),
         points: response.points.toString(),
         wins: response.wins.toString(),
         Driver: formatDriver(response),
-    };
+    });
 }
 
 export function formatDriverStandingsResponse(
@@ -19,21 +19,24 @@ export function formatDriverStandingsResponse(
 ): DriverStandingsResponse[] {
     const standingsResponse = extractByYearAndRound(response, formatDriverStandings);
 
-    return standingsResponse.map(({ season, round, standings }) => ({
-        season,
-        round,
-        driverStandings: standings,
-    }));
+    return standingsResponse.map(
+        ({ season, round, standings }) =>
+            new DriverStandingsResponse({
+                season,
+                round,
+                driverStandings: standings,
+            })
+    );
 }
 
-function formatConstructorStandings(response: constructorStandings & constructors): ConstructorStandings {
-    return {
+function formatConstructorStandings(response: constructorStandings & constructors) {
+    return new ConstructorStandings({
         position: response.position.toString(),
         positionText: response.positionText.toString(),
         points: response.points.toString(),
         wins: response.wins.toString(),
         Constructor: formatConstructor(response),
-    };
+    });
 }
 
 export function formatConstructorStandingsResponse(
@@ -41,11 +44,14 @@ export function formatConstructorStandingsResponse(
 ): ConstructorStandingsResponse[] {
     const standingsResponse = extractByYearAndRound(response, formatConstructorStandings);
 
-    return standingsResponse.map(({ season, round, standings }) => ({
-        season,
-        round,
-        constructorStandings: standings,
-    }));
+    return standingsResponse.map(
+        ({ season, round, standings }) =>
+            new ConstructorStandingsResponse({
+                season,
+                round,
+                constructorStandings: standings,
+            })
+    );
 }
 
 function extractByYearAndRound<S, T>(

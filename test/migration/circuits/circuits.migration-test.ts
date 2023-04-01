@@ -1,5 +1,5 @@
 import querystring from "querystring";
-import { GetCircuitsDto } from "../../../src/routes/circuits/dto/get-circuits.dto";
+import { GetCircuitsParamsDto } from "../../../src/routes/circuits/dto/get-circuits.dto";
 import { getMigrationTest } from "../migrationUtils";
 
 describe("GET /circuits/${circuitId} smoke tests", () => {
@@ -13,7 +13,7 @@ describe("GET /circuits smoke tests", () => {
 
     const endpoint = "/circuits";
 
-    const queries: { queryParams: Partial<GetCircuitsDto>; legacyRoute: string }[] = [
+    const queries: { queryParams: Partial<GetCircuitsParamsDto>; legacyRoute: string }[] = [
         {
             queryParams: { driverId: "bottas" },
             legacyRoute: "drivers/bottas",

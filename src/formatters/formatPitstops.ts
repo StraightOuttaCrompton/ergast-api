@@ -1,6 +1,6 @@
 import { pitStops } from "@prisma/client";
 import formatCircuit from "./formatCircuit";
-import { Pitstop, PitstopsResponse } from "../types/Pitstops";
+import { Pitstop, PitstopsResponse } from "../responseDtos/Pitstops.dto";
 
 export default function formatPitstopsResponse(
     response: (pitStops & {
@@ -18,9 +18,9 @@ export default function formatPitstopsResponse(
         circuitAlt: number | null;
         circuitUrl: string;
     } & { driverRef: string })[]
-): PitstopsResponse {
+) {
     const firstItem = response[0];
-    return {
+    return new PitstopsResponse({
         url: firstItem.raceUrl,
         raceName: firstItem.raceName,
         date: firstItem.raceDate.toString(),
@@ -36,15 +36,15 @@ export default function formatPitstopsResponse(
             url: firstItem.circuitUrl,
         }),
         PitStops: response.map(formatPitstop),
-    };
+    });
 }
 
-function formatPitstop(response: pitStops & { driverRef: string }): Pitstop {
-    return {
+function formatPitstop(response: pitStops & { driverRef: string }) {
+    return new Pitstop({
         driverId: response.driverRef,
         lap: response.lap.toString(),
         stop: response.stop.toString(),
         time: response.time.toString(),
         duration: response.duration,
-    };
+    });
 }

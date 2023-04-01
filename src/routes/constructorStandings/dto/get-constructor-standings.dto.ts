@@ -5,23 +5,23 @@ import { CommonDto } from "../../../common.dto";
 export class GetConstructorStandingsDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
-    constructorId: string;
+    constructorId?: string;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    year: number;
+    year?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    round: number;
+    round?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    position: number;
+    position?: number;
 }

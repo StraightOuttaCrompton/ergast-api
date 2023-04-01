@@ -1,12 +1,16 @@
-import Circuit from "./Circuit";
+import { Circuit } from "./Circuit.dto";
 
 // TODO: replace with just a Date
-interface DateTime {
+export class DateTime {
     date: string;
     time: string;
+
+    constructor(dateTime: DateTime) {
+        Object.assign(this, dateTime);
+    }
 }
 
-export default interface Race {
+export default class Race {
     season: string; // TODO: number
     round: string; // TODO: number
     url: string;
@@ -30,4 +34,8 @@ export default interface Race {
     SecondPractice?: DateTime;
     ThirdPractice?: DateTime;
     Qualifying?: DateTime;
+
+    constructor(race: Race) {
+        Object.assign(this, race);
+    }
 }

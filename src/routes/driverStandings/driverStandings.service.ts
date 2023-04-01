@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { drivers, driverStandings, Prisma } from "@prisma/client";
 import { formatDriverStandingsResponse } from "../../formatters/formatStandings";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetDriverStandingsDto } from "./dto/get-driver-standings.dto";
 import * as sql from "../../sql";
@@ -10,14 +9,7 @@ import * as sql from "../../sql";
 export class DriverStandingsService {
     constructor(private prisma: PrismaService) {}
 
-    async getDriverStandings({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
-        year,
-        round,
-        driverId,
-        position,
-    }: GetDriverStandingsDto) {
+    async getDriverStandings({ limit, offset, year, round, driverId, position }: GetDriverStandingsDto) {
         const driverStandings = (await this.prisma.$queryRaw`
             SELECT DISTINCT 
                 drivers.driverId, drivers.driverRef, drivers.number, drivers.code, drivers.forename, drivers.surname, drivers.dob, drivers.nationality, drivers.url, 

@@ -1,9 +1,16 @@
 import { circuits, races } from "@prisma/client";
-import Race from "src/types/Race";
 import formatCircuit from "./formatCircuit";
+import Race, { DateTime } from "../responseDtos/Race.dto";
 
-export default function formatRace(response: { raceName: string; raceURL: string } & races & circuits): Race {
-    return {
+function formatDateTime({ date, time }: { date: string; time: string }) {
+    return new DateTime({
+        date,
+        time: time + "Z",
+    });
+}
+
+export default function formatRace(response: { raceName: string; raceURL: string } & races & circuits) {
+    return new Race({
         season: response.year.toString(),
         round: response.round.toString(),
         url: response.raceURL,
@@ -14,47 +21,47 @@ export default function formatRace(response: { raceName: string; raceURL: string
 
         ...(response.fp1_date && response.fp1_time
             ? {
-                  FirstPractice: {
+                  FirstPractice: formatDateTime({
                       date: response.fp1_date.toString(),
-                      time: response.fp1_time.toString() + "Z",
-                  },
+                      time: response.fp1_time.toString(),
+                  }),
               }
             : {}),
 
         ...(response.fp2_date && response.fp2_time
             ? {
-                  SecondPractice: {
+                  SecondPractice: formatDateTime({
                       date: response.fp2_date.toString(),
-                      time: response.fp2_time.toString() + "Z",
-                  },
+                      time: response.fp2_time.toString(),
+                  }),
               }
             : {}),
 
         ...(response.fp3_date && response.fp3_time
             ? {
-                  ThirdPractice: {
+                  ThirdPractice: formatDateTime({
                       date: response.fp3_date.toString(),
-                      time: response.fp3_time.toString() + "Z",
-                  },
+                      time: response.fp3_time.toString(),
+                  }),
               }
             : {}),
 
         ...(response.quali_date && response.quali_time
             ? {
-                  Qualifying: {
+                  Qualifying: formatDateTime({
                       date: response.quali_date.toString(),
-                      time: response.quali_time.toString() + "Z",
-                  },
+                      time: response.quali_time.toString(),
+                  }),
               }
             : {}),
 
         ...(response.sprint_date && response.sprint_time
             ? {
-                  Sprint: {
+                  Sprint: formatDateTime({
                       date: response.sprint_date.toString(),
-                      time: response.sprint_time.toString() + "Z",
-                  },
+                      time: response.sprint_time.toString(),
+                  }),
               }
             : {}),
-    };
+    });
 }

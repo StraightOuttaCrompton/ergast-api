@@ -1,9 +1,9 @@
 import { drivers } from "@prisma/client";
 import { formatDate } from "../utils";
-import Driver from "../types/Driver";
+import Driver from "../responseDtos/Driver.dto";
 
-export default function formatDriver(driver: drivers): Driver {
-    return {
+export default function formatDriver(driver: drivers) {
+    return new Driver({
         driverId: driver.driverRef,
         permanentNumber: driver.number?.toString(),
         ...(driver.code ? { code: driver.code } : {}),
@@ -12,5 +12,5 @@ export default function formatDriver(driver: drivers): Driver {
         familyName: driver.surname,
         dateOfBirth: driver.dob !== undefined ? formatDate(driver.dob) : undefined, // TODO: change format, return date?
         nationality: driver.nationality,
-    };
+    });
 }

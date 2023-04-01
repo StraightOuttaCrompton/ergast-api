@@ -1,6 +1,6 @@
 import { lapTimes } from "@prisma/client";
 import formatCircuit from "./formatCircuit";
-import { Lap, LapsResponse } from "../types/Laps";
+import { Lap, LapTiming, LapsResponse } from "../responseDtos/Laps.dto";
 
 export default function formatLapsResponse(
     response: (lapTimes & {
@@ -18,9 +18,9 @@ export default function formatLapsResponse(
         circuitAlt: number | null;
         circuitUrl: string;
     } & { driverRef: string })[]
-): LapsResponse {
+) {
     const firstItem = response[0];
-    return {
+    return new LapsResponse({
         url: firstItem.raceUrl,
         raceName: firstItem.raceName,
         date: firstItem.raceDate.toString(),
@@ -36,7 +36,7 @@ export default function formatLapsResponse(
             url: firstItem.circuitUrl,
         }),
         Laps: formatLaps(response),
-    };
+    });
 }
 
 function formatLaps(response: (lapTimes & { driverRef: string })[]): Lap[] {
@@ -47,11 +47,11 @@ function formatLaps(response: (lapTimes & { driverRef: string })[]): Lap[] {
         const { lap, driverRef, position, time } = responseItem;
 
         if (!currentLap || currentLap.number !== lap.toString()) {
-            currentLap = { number: lap.toString(), Timings: [] };
+            currentLap = new Lap({ number: lap.toString(), Timings: [] });
             laps.push(currentLap);
         }
 
-        currentLap.Timings.push({ driverId: driverRef, position: position.toString(), time });
+        currentLap.Timings.push(new LapTiming({ driverId: driverRef, position: position.toString(), time }));
     }
 
     return laps;

@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
 import { seasons, Prisma } from "@prisma/client";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import * as sql from "../../sql";
 import { PrismaService } from "../../prisma.service";
 import { GetSeasonsDto } from "./dto/get-seasons.dto";
@@ -14,8 +13,8 @@ export class SeasonsService {
     constructor(private prisma: PrismaService) {}
 
     async getSeasons({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
+        limit,
+        offset,
         driverId,
         constructorId,
         circuitId,
