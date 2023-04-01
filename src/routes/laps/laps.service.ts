@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { lapTimes, Prisma } from "@prisma/client";
 import formatLapsResponse from "../../formatters/formatLaps";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetLapsDto } from "./dto/get-laps.dto";
 
@@ -10,7 +9,7 @@ export class LapsService {
     constructor(private prisma: PrismaService) {}
 
     async getLaps({ lapNumber, query }: { lapNumber?: number; query?: GetLapsDto }) {
-        const { limit = DEFAULT_LIMIT, offset = DEFAULT_OFFSET, year, round, driverId } = query;
+        const { limit, offset, year, round, driverId } = query;
         const laps = (await this.prisma.$queryRaw`
             SELECT 
                 races.name as 'raceName', DATE_FORMAT(races.date, '%Y-%m-%d') AS 'raceDate', DATE_FORMAT(races.time, '%H:%i:%S') AS 'raceTime', races.url as 'raceUrl', 
