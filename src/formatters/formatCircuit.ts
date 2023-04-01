@@ -1,7 +1,7 @@
 import { circuits } from "@prisma/client";
 import Circuit from "../types/Circuit";
 
-export default function formatCircuit(circuit: circuits): Circuit {
+export default function formatCircuit(circuit: Omit<circuits, "circuitId">): Circuit {
     return {
         circuitId: circuit.circuitRef,
         url: circuit.url,
