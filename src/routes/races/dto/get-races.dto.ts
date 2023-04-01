@@ -7,47 +7,47 @@ export class GetRacesDto extends CommonDto {
     @IsOptional()
     @IsInt()
     @IsPositive()
-    year: number;
+    year?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    round: number;
+    round?: number;
 
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    driverId?: string;
 
     @IsOptional()
     @IsNotEmpty()
-    constructorId: string;
+    constructorId?: string;
 
     @IsOptional()
     @IsNotEmpty()
-    circuitId: string;
+    circuitId?: string;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    grid: number;
+    grid?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    result: number;
+    result?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    fastest: number;
+    fastest?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    status: number; // TODO: validate for actual status values
+    status?: number; // TODO: validate for actual status values
 }

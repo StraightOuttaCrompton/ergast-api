@@ -6,11 +6,11 @@ export class CommonDto {
     @IsOptional()
     @IsInt()
     @IsPositive()
-    offset: number;
+    offset?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    limit: number;
+    limit?: number;
 }

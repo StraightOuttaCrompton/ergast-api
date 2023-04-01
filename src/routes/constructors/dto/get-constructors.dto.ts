@@ -5,51 +5,51 @@ import { CommonDto } from "../../../common.dto";
 export class GetConstructorsDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
-    circuitId: string;
+    circuitId?: string;
 
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    driverId?: string;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    year: number;
+    year?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    round: number;
+    round?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    grid: number;
+    grid?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    result: number;
+    result?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    fastest: number;
+    fastest?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    status: number; // TODO: validate for actual status values
+    status?: number; // TODO: validate for actual status values
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    constructorStandings: number;
+    constructorStandings?: number;
 }

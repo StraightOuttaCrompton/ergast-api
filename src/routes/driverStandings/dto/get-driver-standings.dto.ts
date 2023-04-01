@@ -5,23 +5,23 @@ import { CommonDto } from "../../../common.dto";
 export class GetDriverStandingsDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    driverId?: string;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    year: number;
+    year?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    round: number;
+    round?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    position: number;
+    position?: number;
 }
