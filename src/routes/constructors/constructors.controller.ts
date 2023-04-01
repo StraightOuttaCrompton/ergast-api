@@ -1,7 +1,9 @@
 import { Controller, Get, Param, Query } from "@nestjs/common";
 import { ConstructorsService } from "./constructors.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("constructors")
 @Controller("constructors")
 export class ConstructorsController {
     constructor(private readonly constructorsService: ConstructorsService) {}

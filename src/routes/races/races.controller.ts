@@ -1,7 +1,9 @@
 import { Controller, Get, Param, Query } from "@nestjs/common";
 import { RacesService } from "./races.service";
 import { GetRacesDto } from "./dto/get-races.dto";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("races")
 @Controller("races")
 export class RacesController {
     constructor(private readonly racesService: RacesService) {}

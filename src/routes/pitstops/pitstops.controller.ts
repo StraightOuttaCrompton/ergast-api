@@ -1,7 +1,9 @@
 import { Controller, Get, Param, Query } from "@nestjs/common";
 import { PitstopsService } from "./pitstops.service";
 import { GetPitstopsDto } from "./dto/get-pitstops.dto";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("pitstops")
 @Controller("pitstops")
 export class PitstopsController {
     constructor(private readonly pitstopsService: PitstopsService) {}
