@@ -1,6 +1,5 @@
 import querystring from "querystring";
 import { getMigrationTest } from "../migrationUtils";
-import { GetDriversDto } from "../../../src/routes/drivers/dto/get-drivers.dto";
 import { GetStatusDto } from "src/routes/status/dto/get-status.dto";
 
 describe("GET /status/${statusId} smoke tests", () => {
