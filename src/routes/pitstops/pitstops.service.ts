@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { pitStops, Prisma } from "@prisma/client";
 import formatPitstopsResponse from "../../formatters/formatPitstops";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetPitstopsDto } from "./dto/get-pitstops.dto";
 
@@ -10,7 +9,7 @@ export class PitstopsService {
     constructor(private prisma: PrismaService) {}
 
     async getPitstops({ pitstopNumber, query }: { pitstopNumber?: number; query?: GetPitstopsDto }) {
-        const { limit = DEFAULT_LIMIT, offset = DEFAULT_OFFSET, year, round, driverId, lapNumber } = query;
+        const { limit, offset, year, round, driverId, lapNumber } = query;
         const pitstops = (await this.prisma.$queryRaw`
 
             SELECT 

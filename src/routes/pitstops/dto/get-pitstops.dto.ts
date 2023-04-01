@@ -15,11 +15,11 @@ export class GetPitstopsDto extends CommonDto {
 
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    driverId?: string;
 
     @IsOptional()
     @Type(() => Number)
     @IsInt()
     @IsPositive()
-    lapNumber: number;
+    lapNumber?: number;
 }

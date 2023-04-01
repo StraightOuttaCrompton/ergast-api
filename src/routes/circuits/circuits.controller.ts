@@ -1,16 +1,22 @@
-import { Controller, Get, Param, Query } from "@nestjs/common";
+import { ClassSerializerInterceptor, Controller, Get, Param, Query, UseInterceptors } from "@nestjs/common";
 import { CircuitsService } from "./circuits.service";
-import { GetCircuitsDto } from "./dto/get-circuits.dto";
+import { GetCircuitsParamsDto } from "./dto/get-circuits.dto";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags("circuits")
 @Controller("circuits")
 export class CircuitsController {
     constructor(private readonly circuitsService: CircuitsService) {}
 
+    @UseInterceptors(ClassSerializerInterceptor)
     @Get()
-    findAll(@Query() query: GetCircuitsDto) {
-        return this.circuitsService.getCircuits(query);
+    async findAll(@Query() query: GetCircuitsParamsDto) {
+        const circuits = await this.circuitsService.getCircuits(query);
+
+        return circuits;
     }
 
+    @UseInterceptors(ClassSerializerInterceptor)
     @Get(":id")
     findOne(@Param("id") id: string) {
         return this.circuitsService.getCircuit(id);

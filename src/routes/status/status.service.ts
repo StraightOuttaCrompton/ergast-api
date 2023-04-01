@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { status, Prisma } from "@prisma/client";
 import { formatPrismaStatus, formatRawStatus } from "../../formatters/formatStatus";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetStatusDto } from "./dto/get-status.dto";
 import * as sql from "../../sql";
@@ -11,8 +10,8 @@ export class StatusService {
     constructor(private prisma: PrismaService) {}
 
     async getStatuses({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
+        limit,
+        offset,
         year,
         round,
         driverId,

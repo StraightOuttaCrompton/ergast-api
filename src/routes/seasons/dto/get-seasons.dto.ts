@@ -5,49 +5,49 @@ import { CommonDto } from "../../../common.dto";
 export class GetSeasonsDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
-    driverId: string;
+    driverId?: string;
 
     @IsOptional()
     @IsNotEmpty()
-    circuitId: string;
+    circuitId?: string;
 
     @IsOptional()
     @IsNotEmpty()
-    constructorId: string;
+    constructorId?: string;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    grid: number;
+    grid?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    result: number;
+    result?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    fastest: number;
+    fastest?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    status: number; // TODO: validate for actual status values
+    status?: number; // TODO: validate for actual status values
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    driverStandings: number;
+    driverStandings?: number;
 
     @Type(() => Number)
     @IsOptional()
     @IsInt()
     @IsPositive()
-    constructorStandings: number;
+    constructorStandings?: number;
 }

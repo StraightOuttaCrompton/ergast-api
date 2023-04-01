@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { drivers, Prisma } from "@prisma/client";
 import formatDriver from "../../formatters/formatDriver";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
 import { GetDriversDto } from "./dto/get-drivers.dto";
 import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
@@ -11,8 +10,8 @@ export class DriversService {
     constructor(private prisma: PrismaService) {}
 
     async getDrivers({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
+        limit,
+        offset,
         year,
         round,
         circuitId,

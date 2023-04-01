@@ -1,9 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { circuits } from "@prisma/client";
 import * as sql from "../../sql";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import { PrismaService } from "../../prisma.service";
-import { GetCircuitsDto } from "./dto/get-circuits.dto";
+import { GetCircuitsParamsDto } from "./dto/get-circuits.dto";
 import formatCircuit from "../../formatters/formatCircuit";
 
 @Injectable()
@@ -11,8 +10,8 @@ export class CircuitsService {
     constructor(private prisma: PrismaService) {}
 
     async getCircuits({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
+        limit,
+        offset,
         year,
         round,
         driverId,
@@ -21,7 +20,7 @@ export class CircuitsService {
         result,
         grid,
         fastest,
-    }: GetCircuitsDto) {
+    }: GetCircuitsParamsDto) {
         const circuits = (await this.prisma.$queryRaw`
             SELECT DISTINCT circuits.circuitRef, circuits.name, circuits.location, circuits.country, circuits.lat, circuits.lng, circuits.alt, circuits.url 
             FROM circuits 

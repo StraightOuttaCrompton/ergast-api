@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { Prisma, races, circuits } from "@prisma/client";
-import { DEFAULT_LIMIT, DEFAULT_OFFSET } from "../../consts";
 import * as sql from "../../sql";
 import { PrismaService } from "../../prisma.service";
 import { GetRacesDto } from "./dto/get-races.dto";
@@ -11,8 +10,8 @@ export class RacesService {
     constructor(private prisma: PrismaService) {}
 
     async getRaces({
-        limit = DEFAULT_LIMIT,
-        offset = DEFAULT_OFFSET,
+        limit,
+        offset,
         year,
         round,
         driverId,

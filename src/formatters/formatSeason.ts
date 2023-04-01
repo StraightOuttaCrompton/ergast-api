@@ -1,9 +1,9 @@
 import { seasons } from "@prisma/client";
-import Season from "../types/Season";
+import Season from "../responseDtos/Season.dto";
 
 export default function formatSeason(season: seasons): Season {
-    return {
+    return new Season({
         season: season.year.toString(),
         url: season.url,
-    };
+    });
 }
