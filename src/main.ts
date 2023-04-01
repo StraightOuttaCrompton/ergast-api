@@ -16,24 +16,19 @@ async function bootstrap() {
         .setVersion(API_VERSION)
         .build();
     const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup(
-        "api",
-        app,
-        document
-        // {
-        //     explorer?: boolean;
-        //     swaggerOptions?: Record<string, any>;
-        //     customCss?: string;
-        //     customCssUrl?: string;
-        //     customJs?: string;
-        //     customfavIcon?: string;
-        //     swaggerUrl?: string;
-        //     customSiteTitle?: string;
-        //     validatorUrl?: string;
-        //     url?: string;
-        //     urls?: Record<'url' | 'name', string>[];
-        // }
-    );
+    SwaggerModule.setup("", app, document, {
+        // explorer?: boolean;
+        // swaggerOptions?: Record<string, any>;
+        // customCss?: string;
+        // customCssUrl?: string;
+        // customJs?: string;
+        // customfavIcon?: string;
+        // swaggerUrl?: string;
+        customSiteTitle: "Ergast docs",
+        // validatorUrl?: string;
+        // url?: string;
+        // urls?: Record<'url' | 'name', string>[];
+    });
 
     await app.listen(API_PORT);
 }
