@@ -1,15 +1,24 @@
 import querystring from "querystring";
 import { GetConstructorsDto } from "src/routes/constructors/dto/get-constructors.dto";
 import { getMigrationTest } from "../migrationUtils";
+import path from "path";
 
 describe("GET /constructors/${constructorId} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.ConstructorTable.Constructors[0]);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.ConstructorTable.Constructors[0]
+    );
 
     migrationTest("/constructors/red_bull", `https://ergast.com/api/f1/constructors/red_bull.json`);
 });
 
 describe("GET /constructors smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.ConstructorTable.Constructors);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.ConstructorTable.Constructors
+    );
 
     const endpoint = "/constructors";
 

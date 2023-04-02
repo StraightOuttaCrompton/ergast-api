@@ -18,11 +18,12 @@ async function getSnapshotExists(containingDirname: string, testFilename: string
 }
 
 export const getMigrationTest =
-    (transformLegacyResponse: (response: any) => any) => async (url: string, legacyUrl: string) => {
+    (containingDirname: string, testFilename: string, transformLegacyResponse: (response: any) => any) =>
+    async (url: string, legacyUrl: string) => {
         test(url, async () => {
             const response = await request(app.getHttpServer()).get(url);
 
-            const snapshotExists = await getSnapshotExists(__dirname, path.basename(__filename), url);
+            const snapshotExists = await getSnapshotExists(containingDirname, testFilename, url);
             if (snapshotExists) {
                 expect(response.body).toMatchSnapshot();
                 return;

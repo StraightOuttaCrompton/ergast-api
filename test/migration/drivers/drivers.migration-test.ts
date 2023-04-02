@@ -1,15 +1,20 @@
 import querystring from "querystring";
 import { getMigrationTest } from "../migrationUtils";
 import { GetDriversDto } from "../../../src/routes/drivers/dto/get-drivers.dto";
+import path from "path";
 
 describe("GET /drivers/${driverId} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.DriverTable.Drivers[0]);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.DriverTable.Drivers[0]
+    );
 
     migrationTest("/drivers/bottas", `https://ergast.com/api/f1/drivers/bottas.json`);
 });
 
 describe("GET /drivers smoke tests", () => {
-    const migrationTest = getMigrationTest((response) =>
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) =>
         response.MRData.DriverTable.Drivers.sort(
             /**
              * Sort function is needed here since ergast doesn't return sorted
