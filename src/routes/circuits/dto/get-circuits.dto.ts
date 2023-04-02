@@ -1,8 +1,9 @@
 import { Type } from "class-transformer";
 import { IsInt, IsNotEmpty, IsOptional, IsPositive } from "class-validator";
 import { CommonDto } from "../../../common.dto";
+import Circuit, { CircuitLocation } from "../../../types/Circuit";
 
-export class GetCircuitsDto extends CommonDto {
+export class GetCircuitsParamsDto extends CommonDto {
     @IsOptional()
     @IsNotEmpty()
     driverId?: string;
@@ -46,4 +47,28 @@ export class GetCircuitsDto extends CommonDto {
     @IsInt()
     @IsPositive()
     status?: number; // TODO: validate for actual status values
+}
+
+export class CircuitLocationDto implements CircuitLocation {
+    lat: string; // TODO: number?
+    long: string; // TODO: number?
+    // alt: string; // TODO: number?
+    locality: string;
+    country: string;
+
+    constructor(location: CircuitLocationDto) {
+        Object.assign(this, location);
+    }
+}
+
+export class CircuitDto implements Circuit {
+    circuitId: string; // TODO: rename to id
+    url: string;
+    circuitName: string; // TODO: rename to name
+    Location: CircuitLocationDto;
+
+    constructor(circuit: CircuitDto) {
+        Object.assign(this, circuit);
+        this.Location = new CircuitLocationDto(circuit.Location);
+    }
 }

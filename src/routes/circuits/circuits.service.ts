@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { circuits } from "@prisma/client";
 import * as sql from "../../sql";
 import { PrismaService } from "../../prisma.service";
-import { GetCircuitsDto } from "./dto/get-circuits.dto";
+import { GetCircuitsParamsDto } from "./dto/get-circuits.dto";
 import formatCircuit from "../../formatters/formatCircuit";
 
 @Injectable()
@@ -20,7 +20,7 @@ export class CircuitsService {
         result,
         grid,
         fastest,
-    }: GetCircuitsDto) {
+    }: GetCircuitsParamsDto) {
         const circuits = (await this.prisma.$queryRaw`
             SELECT DISTINCT circuits.circuitRef, circuits.name, circuits.location, circuits.country, circuits.lat, circuits.lng, circuits.alt, circuits.url 
             FROM circuits 
