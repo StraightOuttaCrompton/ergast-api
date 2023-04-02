@@ -1,15 +1,24 @@
 import querystring from "querystring";
 import { GetCircuitsParamsDto } from "../../../src/routes/circuits/dto/get-circuits.dto";
 import { getMigrationTest } from "../migrationUtils";
+import path from "path";
 
 describe("GET /circuits/${circuitId} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.CircuitTable.Circuits[0]);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.CircuitTable.Circuits[0]
+    );
 
     migrationTest("/circuits/monza", `https://ergast.com/api/f1/circuits/monza.json`);
 });
 
 describe("GET /circuits smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.CircuitTable.Circuits);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.CircuitTable.Circuits
+    );
 
     const endpoint = "/circuits";
 

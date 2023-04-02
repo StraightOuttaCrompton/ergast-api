@@ -1,15 +1,24 @@
 import querystring from "querystring";
 import { GetRacesDto } from "src/routes/races/dto/get-races.dto";
 import { getMigrationTest } from "../migrationUtils";
+import path from "path";
 
 describe("GET /races/${year}/${round} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.RaceTable.Races[0]);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.RaceTable.Races[0]
+    );
 
     migrationTest("/races/2016/5", `https://ergast.com/api/f1/2016/5.json`);
 });
 
 describe("GET /races smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.RaceTable.Races);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.RaceTable.Races
+    );
 
     const endpoint = "/races";
 

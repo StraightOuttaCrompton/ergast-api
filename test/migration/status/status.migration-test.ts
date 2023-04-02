@@ -1,15 +1,24 @@
 import querystring from "querystring";
 import { getMigrationTest } from "../migrationUtils";
 import { GetStatusDto } from "src/routes/status/dto/get-status.dto";
+import path from "path";
 
 describe("GET /status/${statusId} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.StatusTable.Status[0]);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.StatusTable.Status[0]
+    );
 
     migrationTest("/status/1", `https://ergast.com/api/f1/status/1.json`);
 });
 
 describe("GET /status smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.StatusTable.Status);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.StatusTable.Status
+    );
 
     const endpoint = "/status";
 

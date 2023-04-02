@@ -1,9 +1,10 @@
 import querystring from "querystring";
 import { getMigrationTest } from "../migrationUtils";
 import { GetPitstopsDto } from "src/routes/pitstops/dto/get-pitstops.dto";
+import path from "path";
 
 describe("GET /pitstops/${pitNumber} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => {
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) => {
         const { season, round, ...rest } = response.MRData.RaceTable.Races[0];
 
         return rest;
@@ -16,7 +17,7 @@ describe("GET /pitstops/${pitNumber} smoke tests", () => {
 });
 
 describe("GET /pitstops smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => {
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) => {
         const { season, round, ...rest } = response.MRData.RaceTable.Races[0];
 
         return rest;

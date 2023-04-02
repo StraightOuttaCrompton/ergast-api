@@ -1,9 +1,10 @@
 import querystring from "querystring";
 import { getMigrationTest } from "../migrationUtils";
 import { GetLapsDto } from "src/routes/laps/dto/get-laps.dto";
+import path from "path";
 
 describe("GET /laps/${lapNumber} smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => {
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) => {
         const { season, round, ...rest } = response.MRData.RaceTable.Races[0];
 
         return rest;
@@ -16,7 +17,7 @@ describe("GET /laps/${lapNumber} smoke tests", () => {
 });
 
 describe("GET /laps smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => {
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) => {
         const { season, round, ...rest } = response.MRData.RaceTable.Races[0];
 
         return rest;

@@ -1,6 +1,7 @@
 import querystring from "querystring";
 import { GetConstructorStandingsDto } from "src/routes/constructorStandings/dto/get-constructor-standings.dto";
 import { getMigrationTest } from "../migrationUtils";
+import path from "path";
 
 function convertLegacyConstructorStandingsResponse(constructorStanding: any) {
     const { Constructors, ...rest } = constructorStanding;
@@ -11,17 +12,11 @@ function convertLegacyConstructorStandingsResponse(constructorStanding: any) {
 function convertLegacyResponse(response: any) {
     const { season, round, ConstructorStandings } = response;
 
-    console.log({
-        season,
-        round,
-        constructorStandings: ConstructorStandings.map(convertLegacyConstructorStandingsResponse),
-    });
-
     return { season, round, constructorStandings: ConstructorStandings.map(convertLegacyConstructorStandingsResponse) };
 }
 
 describe("GET /constructorStandings smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => {
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) => {
         return response.MRData.StandingsTable.StandingsLists.map(convertLegacyResponse);
     });
 

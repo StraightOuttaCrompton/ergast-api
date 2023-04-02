@@ -3,6 +3,7 @@ import request from "supertest";
 import { GetSeasonsDto } from "../../../src/routes/seasons/dto/get-seasons.dto";
 import { getMigrationTest } from "../migrationUtils";
 import { app } from "../setup";
+import path from "path";
 
 describe("GET /seasons/${seasonId} smoke tests", () => {
     test("/seasons/1994", async () => {
@@ -13,7 +14,11 @@ describe("GET /seasons/${seasonId} smoke tests", () => {
 });
 
 describe("GET /seasons smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => response.MRData.SeasonTable.Seasons);
+    const migrationTest = getMigrationTest(
+        __dirname,
+        path.basename(__filename),
+        (response) => response.MRData.SeasonTable.Seasons
+    );
 
     const endpoint = "/seasons";
 

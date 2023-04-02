@@ -1,6 +1,7 @@
 import querystring from "querystring";
 import { GetDriverStandingsDto } from "src/routes/driverStandings/dto/get-driver-standings.dto";
 import { getMigrationTest } from "../migrationUtils";
+import path from "path";
 
 function convertLegacyDriverStandingsResponse(driverStanding: any) {
     const { Constructors, ...rest } = driverStanding;
@@ -11,13 +12,11 @@ function convertLegacyDriverStandingsResponse(driverStanding: any) {
 function convertLegacyResponse(response: any) {
     const { season, round, DriverStandings } = response;
 
-    console.log({ season, round, driverStandings: DriverStandings.map(convertLegacyDriverStandingsResponse) });
-
     return { season, round, driverStandings: DriverStandings.map(convertLegacyDriverStandingsResponse) };
 }
 
 describe("GET /driverStandings smoke tests", () => {
-    const migrationTest = getMigrationTest((response) => {
+    const migrationTest = getMigrationTest(__dirname, path.basename(__filename), (response) => {
         return response.MRData.StandingsTable.StandingsLists.map(convertLegacyResponse);
     });
 
