@@ -1,8 +1,8 @@
 import { circuits } from "@prisma/client";
-import Circuit from "../types/Circuit";
+import { CircuitDto } from "../routes/circuits/dto/get-circuits.dto";
 
-export default function formatCircuit(circuit: Omit<circuits, "circuitId">): Circuit {
-    return {
+export default function formatCircuit(circuit: Omit<circuits, "circuitId">): CircuitDto {
+    return new CircuitDto({
         circuitId: circuit.circuitRef,
         url: circuit.url,
         circuitName: circuit.name,
@@ -14,5 +14,5 @@ export default function formatCircuit(circuit: Omit<circuits, "circuitId">): Cir
             locality: circuit.location || "",
             country: circuit.country || "",
         },
-    };
+    });
 }

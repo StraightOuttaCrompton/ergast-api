@@ -1,6 +1,6 @@
 import { ClassSerializerInterceptor, Controller, Get, Param, Query, UseInterceptors } from "@nestjs/common";
 import { CircuitsService } from "./circuits.service";
-import { CircuitDto, GetCircuitsParamsDto } from "./dto/get-circuits.dto";
+import { GetCircuitsParamsDto } from "./dto/get-circuits.dto";
 import { ApiTags } from "@nestjs/swagger";
 
 @ApiTags("circuits")
@@ -13,7 +13,7 @@ export class CircuitsController {
     async findAll(@Query() query: GetCircuitsParamsDto) {
         const circuits = await this.circuitsService.getCircuits(query);
 
-        return circuits.map((circuit) => new CircuitDto(circuit));
+        return circuits;
     }
 
     @Get(":id")
