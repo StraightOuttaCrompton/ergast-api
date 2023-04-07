@@ -1521,7 +1521,7 @@ exports[`GET /driverStandings smoke tests /driverStandings?year=2022 1`] = `
           "familyName": "de Vries",
           "givenName": "Nyck",
           "nationality": "Dutch",
-          "permanentNumber": "45",
+          "permanentNumber": "21",
           "url": "http://en.wikipedia.org/wiki/Nyck_de_Vries",
         },
         "points": "2",

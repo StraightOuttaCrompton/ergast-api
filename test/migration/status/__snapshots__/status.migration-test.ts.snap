@@ -3,7 +3,7 @@
 exports[`GET /status smoke tests /status 1`] = `
 [
   {
-    "count": "7111",
+    "count": "7123",
     "status": "Finished",
     "statusId": "1",
   },
@@ -13,17 +13,17 @@ exports[`GET /status smoke tests /status 1`] = `
     "statusId": "2",
   },
   {
-    "count": "1044",
+    "count": "1046",
     "status": "Accident",
     "statusId": "3",
   },
   {
-    "count": "833",
+    "count": "838",
     "status": "Collision",
     "statusId": "4",
   },
   {
-    "count": "2013",
+    "count": "2014",
     "status": "Engine",
     "statusId": "5",
   },
@@ -558,7 +558,7 @@ exports[`GET /status smoke tests /status?constructorId=renault 1`] = `
 exports[`GET /status smoke tests /status?driverId=hamilton 1`] = `
 [
   {
-    "count": "272",
+    "count": "273",
     "status": "Finished",
     "statusId": "1",
   },
@@ -842,7 +842,7 @@ exports[`GET /status smoke tests /status?year=2022 1`] = `
 
 exports[`GET /status/\${statusId} smoke tests /status/1 1`] = `
 {
-  "count": "7111",
+  "count": "7123",
   "status": "Finished",
   "statusId": "1",
 }
