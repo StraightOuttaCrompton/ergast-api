@@ -1,16 +1,24 @@
 import { NestFactory } from "@nestjs/core";
+import serverlessExpress from "@vendia/serverless-express";
+import { Callback, Context, Handler } from "aws-lambda";
 import { AppModule } from "./app.module";
-import { API_PORT } from "./consts";
-import { mainConfig } from "./main.config";
-import { mainSwagger } from "./main.swagger";
+import mainConfig from "./main.config";
+import setupSwagger from "./setupSwagger";
 
-async function bootstrap() {
-    console.log(`Server is listening on port ${API_PORT}\n`);
+let server: Handler;
 
+async function bootstrap(): Promise<Handler> {
     const app = await NestFactory.create(AppModule);
-    mainConfig(app);
-    mainSwagger(app);
 
-    await app.listen(API_PORT);
+    mainConfig(app);
+    setupSwagger(app);
+    await app.init();
+
+    const expressApp = app.getHttpAdapter().getInstance();
+    return serverlessExpress({ app: expressApp });
 }
-bootstrap();
+
+export const handler: Handler = async (event: any, context: Context, callback: Callback) => {
+    server = server ?? (await bootstrap());
+    return server(event, context, callback);
+};

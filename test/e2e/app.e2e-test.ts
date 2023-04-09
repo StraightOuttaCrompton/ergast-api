@@ -1,6 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { INestApplication } from "@nestjs/common";
-import { mainConfig } from "../../src/main.config";
+import mainConfig from "../../src/main.config";
 import request from "supertest";
 import { AppModule } from "../../src/app.module";
 
