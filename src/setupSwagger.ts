@@ -2,14 +2,16 @@ import { INestApplication } from "@nestjs/common";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 import { API_VERSION, ERGAST_DESCRIPTION } from "./consts";
 
-export function mainSwagger(app: INestApplication, { generateFile = false }: { generateFile?: boolean } = {}) {
+export default function setupSwagger(app: INestApplication) {
     const config = new DocumentBuilder()
         .setTitle("Ergast")
         .setDescription(ERGAST_DESCRIPTION)
         .setVersion(API_VERSION)
         .build();
     const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup("", app, document, {
+
+    const path = process.env.NODE_ENV === "production" ? "/" : "/docs";
+    SwaggerModule.setup(path, app, document, {
         // explorer?: boolean;
         // swaggerOptions?: Record<string, any>;
         // customCss?: string;

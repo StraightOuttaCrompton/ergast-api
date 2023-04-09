@@ -1,17 +1,5 @@
 version: "3.7"
 services:
-    # TODO: use for production builds
-    # api-server:
-    #   build:
-    #     dockerfile: apiServer.Dockerfile
-    #     context: .
-    #   container_name: api-server
-    #   restart: always
-    #   environment:
-    #     NODE_ENV: production
-    #   ports:
-    #     - "8080:8732"
-
     mysql-server:
         build:
             dockerfile: mysql.Dockerfile

@@ -1,0 +1,40 @@
+service: ergast-nest-api
+
+plugins:
+    - serverless-offline
+
+provider:
+    name: aws
+    runtime: nodejs14.x
+    region: eu-west-1
+    environment:
+        DATABASE_URL: ${env:DATABASE_URL}
+        NODE_ENV: ${env:NODE_ENV}
+
+useDotenv: true
+
+package:
+    patterns:
+        - "!src/**"
+        - "!test/**"
+        - "!prisma/**"
+        - "!.husky/**"
+        - "!.vscode/**"
+        - "!.yarn/**"
+        - "!node_modules/**"
+        - "node_modules/.prisma/**"
+        - "node_modules/prisma/**"
+        - "dist/**"
+        - ".env"
+
+functions:
+    main:
+        url: true
+        handler: dist/main.handler
+        events:
+            - http:
+                  method: ANY
+                  path: /
+            - http:
+                  method: ANY
+                  path: "{proxy+}"

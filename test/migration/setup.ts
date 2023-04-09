@@ -1,7 +1,7 @@
 import { INestApplication } from "@nestjs/common";
 import { Test } from "@nestjs/testing";
 import { AppModule } from "../../src/app.module";
-import { mainConfig } from "../../src/main.config";
+import mainConfig from "../../src/main.config";
 
 export let app: INestApplication;
 
