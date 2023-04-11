@@ -3,8 +3,8 @@ import { Circuit } from "./Circuit.dto";
 export class PitstopsResponse {
     url: string;
     raceName: string;
-    date: string; // TODO: Date
-    time: string; // TODO: Date
+    date: string;
+    time: string;
     Circuit: Circuit;
     PitStops: Pitstop[];
 
@@ -15,10 +15,10 @@ export class PitstopsResponse {
 
 export class Pitstop {
     driverId: string;
-    lap: string; // TODO: number
-    stop: string; // TODO: number
-    time: string; // TODO: Date
-    duration: string; // TODO: number miliseconds
+    lap: string;
+    stop: string;
+    time: string;
+    duration: string;
 
     constructor(pitstop: Pitstop) {
         Object.assign(this, pitstop);

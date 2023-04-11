@@ -1,7 +1,7 @@
 export default class Status {
-    statusId: string; // TODO: number
+    statusId: string;
     status: string;
-    count: string; // TODO: number
+    count: string;
 
     constructor(status: Status) {
         Object.assign(this, status);

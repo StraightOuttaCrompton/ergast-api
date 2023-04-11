@@ -45,7 +45,7 @@ export class GetDriversDto extends CommonDto {
     @IsOptional()
     @IsInt()
     @IsPositive()
-    status?: number; // TODO: validate for actual status values
+    status?: number;
 
     @Type(() => Number)
     @IsOptional()

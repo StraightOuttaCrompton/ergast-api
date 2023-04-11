@@ -45,5 +45,5 @@ export class GetCircuitsParamsDto extends CommonDto {
     @IsOptional()
     @IsInt()
     @IsPositive()
-    status?: number; // TODO: validate for actual status values
+    status?: number;
 }

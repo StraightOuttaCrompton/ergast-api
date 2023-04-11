@@ -1,11 +1,11 @@
 export default class Driver {
     driverId: string;
-    permanentNumber: string; // TODO: number
+    permanentNumber: string;
     code?: string;
     url: string;
-    givenName: string; // TODO: forename
-    familyName: string; // TODO: surname
-    dateOfBirth: string; // TODO: Date
+    givenName: string;
+    familyName: string;
+    dateOfBirth: string;
     nationality: string;
 
     constructor(driver: Driver) {

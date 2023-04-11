@@ -1,11 +1,11 @@
 import Driver from "./Driver.dto";
 
 export class DriverStandings {
-    position: string; // TODO: number
-    positionText: string; // TODO: number
-    points: string; // TODO: number
-    wins: string; // TODO: number
-    Driver: Driver; // TODO: driver
+    position: string;
+    positionText: string;
+    points: string;
+    wins: string;
+    Driver: Driver;
 
     constructor(driverStandings: DriverStandings) {
         Object.assign(this, driverStandings);
@@ -13,8 +13,8 @@ export class DriverStandings {
 }
 
 export class DriverStandingsResponse {
-    season: string; // TODO: number
-    round: string; // TODO: number
+    season: string;
+    round: string;
     driverStandings: DriverStandings[];
 
     constructor(driverStandingsResponse: DriverStandingsResponse) {
