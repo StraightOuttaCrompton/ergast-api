@@ -1,6 +1,7 @@
 export class CircuitLocation {
-    lat: string;
-    long: string;
+    lat: string; // TODO: number?
+    long: string; // TODO: number?
+    // alt: string; // TODO: number?
     locality: string;
     country: string;
 
@@ -10,10 +11,10 @@ export class CircuitLocation {
 }
 
 export class Circuit {
-    circuitId: string;
+    circuitId: string; // TODO: rename to id
     url: string;
-    circuitName: string;
-    Location: CircuitLocation;
+    circuitName: string; // TODO: rename to name
+    Location: CircuitLocation; // TODO: rename to location
 
     constructor(circuit: Circuit) {
         Object.assign(this, circuit);
