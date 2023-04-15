@@ -1,11 +1,11 @@
 import Constructor from "./Constructor.dto";
 
 export class ConstructorStandings {
-    position: string;
-    positionText: string;
-    points: string;
-    wins: string;
-    Constructor: Constructor;
+    position: string; // TODO: number
+    positionText: string; // TODO: number
+    points: string; // TODO: number
+    wins: string; // TODO: number
+    Constructor: Constructor; // TODO: constructor
 
     constructor(constructorStandings: ConstructorStandings) {
         Object.assign(this, constructorStandings);
@@ -13,8 +13,8 @@ export class ConstructorStandings {
 }
 
 export class ConstructorStandingsResponse {
-    season: string;
-    round: string;
+    season: string; // TODO: number
+    round: string; // TODO: number
     constructorStandings: ConstructorStandings[];
 
     constructor(constructorStandingsResponse: ConstructorStandingsResponse) {

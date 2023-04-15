@@ -37,7 +37,7 @@ export class GetSeasonsDto extends CommonDto {
     @IsOptional()
     @IsInt()
     @IsPositive()
-    status?: number;
+    status?: number; // TODO: validate for actual status values
 
     @Type(() => Number)
     @IsOptional()
