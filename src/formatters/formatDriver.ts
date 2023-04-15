@@ -2,7 +2,7 @@ import { drivers } from "@prisma/client";
 import { formatDate } from "../utils";
 import Driver from "../responseDtos/Driver.dto";
 
-export default function formatDriver(driver: drivers) {
+export default function formatDriver(driver: Omit<drivers, "driverId">) {
     return new Driver({
         driverId: driver.driverRef,
         permanentNumber: driver.number?.toString(),
