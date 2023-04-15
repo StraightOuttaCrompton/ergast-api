@@ -1,16 +1,14 @@
 import { Injectable } from "@nestjs/common";
 import { drivers, driverStandings, Prisma } from "@prisma/client";
 import { formatDriverStandingsResponse } from "../../formatters/formatStandings";
-import { PrismaService } from "../../prisma.service";
+import prisma from "../../prisma";
 import { GetDriverStandingsDto } from "./dto/get-driver-standings.dto";
 import * as sql from "../../sql";
 
 @Injectable()
 export class DriverStandingsService {
-    constructor(private prisma: PrismaService) {}
-
     async getDriverStandings({ limit, offset, year, round, driverId, position }: GetDriverStandingsDto) {
-        const driverStandings = (await this.prisma.$queryRaw`
+        const driverStandings = (await prisma.$queryRaw`
             SELECT DISTINCT 
                 drivers.driverId, drivers.driverRef, drivers.number, drivers.code, drivers.forename, drivers.surname, drivers.dob, drivers.nationality, drivers.url, 
                 driverStandings.points, driverStandings.position, driverStandings.positionText, driverStandings.wins, 

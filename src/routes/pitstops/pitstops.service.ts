@@ -1,16 +1,14 @@
 import { Injectable } from "@nestjs/common";
 import { pitStops, Prisma } from "@prisma/client";
 import formatPitstopsResponse from "../../formatters/formatPitstops";
-import { PrismaService } from "../../prisma.service";
+import prisma from "../../prisma";
 import { GetPitstopsDto } from "./dto/get-pitstops.dto";
 
 @Injectable()
 export class PitstopsService {
-    constructor(private prisma: PrismaService) {}
-
     async getPitstops({ pitstopNumber, query }: { pitstopNumber?: number; query?: GetPitstopsDto }) {
         const { limit, offset, year, round, driverId, lapNumber } = query;
-        const pitstops = (await this.prisma.$queryRaw`
+        const pitstops = (await prisma.$queryRaw`
 
             SELECT 
                 races.name as 'raceName', DATE_FORMAT(races.date, '%Y-%m-%d') AS 'raceDate', DATE_FORMAT(races.time, '%H:%i:%S') AS 'raceTime', races.url as 'raceUrl', 

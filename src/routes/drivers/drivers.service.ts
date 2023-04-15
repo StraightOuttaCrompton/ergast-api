@@ -1,14 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { drivers, Prisma } from "@prisma/client";
 import formatDriver from "../../formatters/formatDriver";
-import { PrismaService } from "../../prisma.service";
 import { GetDriversDto } from "./dto/get-drivers.dto";
 import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
+import prisma from "../../prisma";
 
 @Injectable()
 export class DriversService {
-    constructor(private prisma: PrismaService) {}
-
     async getDrivers({
         limit,
         offset,
@@ -26,7 +24,7 @@ export class DriversService {
             throw new StandingParameterCombinationException();
         }
 
-        const drivers = (await this.prisma.$queryRaw`
+        const drivers = (await prisma.$queryRaw`
             SELECT DISTINCT drivers.*
             FROM drivers
             ${
@@ -132,7 +130,7 @@ export class DriversService {
     }
 
     async getDriver(driverRef: string) {
-        const driver = await this.prisma.drivers.findUnique({
+        const driver = await prisma.drivers.findUnique({
             where: { driverRef },
         });
 

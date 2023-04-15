@@ -1,14 +1,12 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { Prisma, races, circuits } from "@prisma/client";
 import * as sql from "../../sql";
-import { PrismaService } from "../../prisma.service";
 import { GetRacesDto } from "./dto/get-races.dto";
 import formatRace from "../../formatters/formatRace";
+import prisma from "../../prisma";
 
 @Injectable()
 export class RacesService {
-    constructor(private prisma: PrismaService) {}
-
     async getRaces({
         limit,
         offset,
@@ -22,7 +20,7 @@ export class RacesService {
         grid,
         fastest,
     }: GetRacesDto) {
-        const sqlResponse = (await this.prisma.$queryRaw`
+        const sqlResponse = (await prisma.$queryRaw`
             SELECT races.year, races.round, 
             races.name AS 'raceName', 
             races.url AS 'raceURL', 
@@ -65,7 +63,7 @@ export class RacesService {
     }
 
     async getRace(year: number, round: number) {
-        const sqlResponse = (await this.prisma.$queryRaw`
+        const sqlResponse = (await prisma.$queryRaw`
             SELECT races.year, races.round, 
             races.name AS 'raceName', 
             races.url AS 'raceURL', 
