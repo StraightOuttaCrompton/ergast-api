@@ -9,9 +9,13 @@ import { SeasonsModule } from "./routes/seasons/seasons.module";
 import { StatusModule } from "./routes/status/status.module";
 import { LapsModule } from "./routes/laps/laps.module";
 import { PitstopsModule } from "./routes/pitstops/pitstops.module";
+import { ConfigModule } from "@nestjs/config";
 
 @Module({
     imports: [
+        ConfigModule.forRoot({
+            envFilePath: [".env", ".env.local"],
+        }),
         DriversModule,
         DriverStandingsModule,
         CircuitsModule,
