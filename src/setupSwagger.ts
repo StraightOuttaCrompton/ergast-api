@@ -1,11 +1,11 @@
 import { INestApplication } from "@nestjs/common";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
-import { API_VERSION, ERGAST_DESCRIPTION } from "./consts";
+import { API_VERSION, SITE_DESCRIPTION, SITE_TITLE } from "./consts";
 
 export default function setupSwagger(app: INestApplication) {
     const config = new DocumentBuilder()
         .setTitle("Ergast")
-        .setDescription(ERGAST_DESCRIPTION)
+        .setDescription(SITE_DESCRIPTION)
         .setVersion(API_VERSION)
         .build();
     const document = SwaggerModule.createDocument(app, config);
@@ -19,7 +19,7 @@ export default function setupSwagger(app: INestApplication) {
         // customJs?: string;
         // customfavIcon?: string;
         // swaggerUrl?: string;
-        customSiteTitle: "Ergast docs",
+        customSiteTitle: SITE_TITLE,
         // validatorUrl?: string;
         // url?: string;
         // urls?: Record<'url' | 'name', string>[];
