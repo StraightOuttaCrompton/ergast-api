@@ -1,6 +1,6 @@
 import { INestApplication } from "@nestjs/common";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
-import { API_VERSION, SITE_DESCRIPTION, SITE_TITLE } from "./consts";
+import { API_VERSION, SITE_DESCRIPTION, SITE_TITLE, isProduction, isServerless } from "./consts";
 
 export default function setupSwagger(app: INestApplication) {
     const config = new DocumentBuilder()
@@ -10,7 +10,14 @@ export default function setupSwagger(app: INestApplication) {
         .build();
     const document = SwaggerModule.createDocument(app, config);
 
-    const path = process.env.NODE_ENV === "production" ? "/" : "/docs";
+    const path = (() => {
+        if (isProduction || !isServerless) {
+            return "/";
+        }
+
+        return "/docs";
+    })();
+
     SwaggerModule.setup(path, app, document, {
         // explorer?: boolean;
         // swaggerOptions?: Record<string, any>;

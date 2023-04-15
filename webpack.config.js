@@ -11,6 +11,7 @@ module.exports = (options, webpack) => {
 
     return {
         ...options,
+        entry: "./src/main.serverless.ts",
         externals: [],
         optimization: {
             minimize: true,

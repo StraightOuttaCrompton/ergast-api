@@ -8,9 +8,10 @@
     "packageManager": "yarn@3.4.1",
     "scripts": {
         "build": "nest build --webpack",
-        "deploy": "yarn build && cross-env NODE_ENV=production serverless deploy",
+        "deploy": "yarn build && cross-env NODE_ENV=production DEPLOYMENT_ENV=serverless serverless deploy",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-        "start": "yarn build && cross-env NODE_ENV=development serverless offline",
+        "start": "nest start --watch",
+        "start:serverless": "yarn build && cross-env NODE_ENV=development DEPLOYMENT_ENV=serverless serverless offline",
         "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
         "test:watch": "jest --watch",
         "test:cov": "jest --coverage",
