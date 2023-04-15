@@ -1,16 +1,14 @@
 import { Injectable } from "@nestjs/common";
 import { lapTimes, Prisma } from "@prisma/client";
 import formatLapsResponse from "../../formatters/formatLaps";
-import { PrismaService } from "../../prisma.service";
+import prisma from "../../prisma";
 import { GetLapsDto } from "./dto/get-laps.dto";
 
 @Injectable()
 export class LapsService {
-    constructor(private prisma: PrismaService) {}
-
     async getLaps({ lapNumber, query }: { lapNumber?: number; query?: GetLapsDto }) {
         const { limit, offset, year, round, driverId } = query;
-        const laps = (await this.prisma.$queryRaw`
+        const laps = (await prisma.$queryRaw`
             SELECT 
                 races.name as 'raceName', DATE_FORMAT(races.date, '%Y-%m-%d') AS 'raceDate', DATE_FORMAT(races.time, '%H:%i:%S') AS 'raceTime', races.url as 'raceUrl', 
                 circuits.circuitRef, circuits.name as 'circuitName', circuits.location as 'circuitLocation', circuits.country as 'circuitCountry', circuits.lat as 'circuitLat', circuits.lng as 'circuitLng', circuits.alt as 'circuitAlt', circuits.url as 'circuitUrl',

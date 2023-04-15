@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { seasons, Prisma } from "@prisma/client";
 import * as sql from "../../sql";
-import { PrismaService } from "../../prisma.service";
+import prisma from "../../prisma";
 import { GetSeasonsDto } from "./dto/get-seasons.dto";
 import formatSeason from "../../formatters/formatSeason";
 import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
@@ -10,8 +10,6 @@ import { StandingParameterCombinationException } from "../../exceptions/Standing
 
 @Injectable()
 export class SeasonsService {
-    constructor(private prisma: PrismaService) {}
-
     async getSeasons({
         limit,
         offset,
@@ -29,7 +27,7 @@ export class SeasonsService {
             throw new StandingParameterCombinationException();
         }
 
-        const seasons = (await this.prisma.$queryRaw`
+        const seasons = (await prisma.$queryRaw`
             SELECT DISTINCT seasons.year, seasons.url 
             FROM seasons
 
@@ -133,7 +131,7 @@ export class SeasonsService {
     }
 
     async getSeason(year: number) {
-        const circuit = await this.prisma.seasons.findUnique({
+        const circuit = await prisma.seasons.findUnique({
             where: { year },
         });
 

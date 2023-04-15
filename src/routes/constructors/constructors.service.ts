@@ -1,15 +1,13 @@
 import { Injectable } from "@nestjs/common";
 import { constructors, Prisma } from "@prisma/client";
 import * as sql from "../../sql";
-import { PrismaService } from "../../prisma.service";
 import { GetConstructorsDto } from "./dto/get-constructors.dto";
 import formatConstructor from "../../formatters/formatConstructor";
 import { StandingParameterCombinationException } from "../../exceptions/StandingParameterCombinationException";
+import prisma from "../../prisma";
 
 @Injectable()
 export class ConstructorsService {
-    constructor(private prisma: PrismaService) {}
-
     async getConstructors({
         limit,
         offset,
@@ -27,7 +25,7 @@ export class ConstructorsService {
             throw new StandingParameterCombinationException();
         }
 
-        const constructors = (await this.prisma.$queryRaw`
+        const constructors = (await prisma.$queryRaw`
             SELECT DISTINCT constructors.* 
             FROM constructors
             ${sql.tables.races({ year, circuitId, constructorStandings })}
@@ -103,7 +101,7 @@ export class ConstructorsService {
     }
 
     async getConstructor(constructorRef: string) {
-        const constructor = await this.prisma.constructors.findUnique({
+        const constructor = await prisma.constructors.findUnique({
             where: { constructorRef },
         });
 

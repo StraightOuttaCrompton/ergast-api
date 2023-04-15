@@ -1,14 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { status, Prisma } from "@prisma/client";
 import { formatPrismaStatus, formatRawStatus } from "../../formatters/formatStatus";
-import { PrismaService } from "../../prisma.service";
+import prisma from "../../prisma";
 import { GetStatusDto } from "./dto/get-status.dto";
 import * as sql from "../../sql";
 
 @Injectable()
 export class StatusService {
-    constructor(private prisma: PrismaService) {}
-
     async getStatuses({
         limit,
         offset,
@@ -21,7 +19,7 @@ export class StatusService {
         result,
         fastest,
     }: GetStatusDto) {
-        const status = (await this.prisma.$queryRaw`
+        const status = (await prisma.$queryRaw`
             SELECT DISTINCT 
                 status.statusId, status.status, COUNT(*) AS 'count'
                 FROM status, results
@@ -56,7 +54,7 @@ export class StatusService {
     }
 
     async getStatusById(statusId: number) {
-        const status = await this.prisma.status.findUnique({
+        const status = await prisma.status.findUnique({
             where: { statusId },
             include: {
                 _count: true,
