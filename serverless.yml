@@ -10,6 +10,7 @@ provider:
     environment:
         DATABASE_URL: ${env:DATABASE_URL}
         NODE_ENV: ${env:NODE_ENV}
+        DEPLOYMENT_ENV: ${env:DEPLOYMENT_ENV}
 
 useDotenv: true
 
