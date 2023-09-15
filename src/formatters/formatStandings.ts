@@ -58,7 +58,7 @@ function extractByYearAndRound<S, T>(
     response: (S & { year: number; round: number })[],
     formatStandings: (response: S) => T
 ) {
-    const standingsMap: Record<string, { season: string; round: string; standings: T[] }> = {};
+    const responseMap: Record<string, { season: string; round: string; standings: T[] }> = {};
 
     for (let i = 0; i < response.length; i++) {
         const { year, round } = response[i];
@@ -68,19 +68,19 @@ function extractByYearAndRound<S, T>(
 
         const standings = formatStandings(response[i]);
 
-        if (!standingsMap[key]) {
+        if (!responseMap[key]) {
             // Create a new standings object if one does not exist for this season and round
-            standingsMap[key] = {
+            responseMap[key] = {
                 season: year.toString(),
                 round: round.toString(),
                 standings: [standings],
             };
         } else {
             // Add the player to the existing standings object for this season and round
-            standingsMap[key].standings.push(standings);
+            responseMap[key].standings.push(standings);
         }
     }
 
     // Convert the standingsMap object to an array of standings objects
-    return Object.values(standingsMap);
+    return Object.values(responseMap);
 }

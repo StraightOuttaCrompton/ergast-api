@@ -10,6 +10,7 @@ import { StatusModule } from "./routes/status/status.module";
 import { LapsModule } from "./routes/laps/laps.module";
 import { PitstopsModule } from "./routes/pitstops/pitstops.module";
 import { ConfigModule } from "@nestjs/config";
+import { ResultsModule } from "./routes/results/results.module";
 
 @Module({
     imports: [
@@ -24,6 +25,7 @@ import { ConfigModule } from "@nestjs/config";
         LapsModule,
         PitstopsModule,
         RacesModule,
+        ResultsModule,
         SeasonsModule,
         StatusModule,
     ],
