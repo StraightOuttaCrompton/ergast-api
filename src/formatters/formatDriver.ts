@@ -10,7 +10,7 @@ export default function formatDriver(driver: drivers) {
         url: driver.url,
         givenName: driver.forename,
         familyName: driver.surname,
-        dateOfBirth: driver.dob !== undefined ? formatDate(driver.dob) : undefined,
+        dateOfBirth: driver.dob !== undefined ? formatDate(driver.dob) : undefined, // TODO: change format, return date?
         nationality: driver.nationality,
     });
 }

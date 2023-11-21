@@ -1,5 +1,5 @@
 export default class Season {
-    season: string;
+    season: string; // TODO: year? number?
     url: string;
 
     constructor(season: Season) {
